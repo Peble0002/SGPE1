@@ -14,6 +14,21 @@ import logicadenegocios.*;
 public class Curso_PlanEstudioBD {
   Conexion conexion = new Conexion();
   
+  
+  public void insertarCursoPlanEstudio(Bloque pCursoPlan){
+    try{
+      Connection con = conexion.getConexion();
+      PreparedStatement ps = con.prepareStatement("INSERT INTO PlanEstudio_Curso (IDCurso, NumeroPlan, NumeroBloque) VALUES (?,?,?)");
+      ps.setString(1, pCursoPlan.getIdCurso());
+      ps.setString(2, pCursoPlan.getNumPlan());
+      ps.setInt(3, pCursoPlan.getNumBloque());
+      ps.executeUpdate();
+      JOptionPane.showMessageDialog(null, "Registro guardado.");
+    }catch(SQLException e){
+      JOptionPane.showMessageDialog(null, e.toString());
+    }
+  }
+  
   public void eliminarCursoPlan(Bloque pBloque){
     try{
       Connection con = conexion.getConexion();

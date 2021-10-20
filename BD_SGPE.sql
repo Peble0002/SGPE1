@@ -232,6 +232,7 @@ EXECUTE Insertar_Curso 'TI1201', 'Comportamiento Organizacional y Talento Humano
 EXECUTE Insertar_Curso 'TI2402', 'Algoritmos y Estructuras de Datos', 4, 4 
 EXECUTE Insertar_Curso 'TI2404', 'Organización y Arquitectura de Computadores', 3, 4 
 EXECUTE Insertar_Curso 'TI4500', 'Ingeniería de Requerimientos', 3, 4 
+EXECUTE Insertar_Curso 'LU2021', 'Prueba de Luis', 3, 4 
 EXECUTE Insertar_Requisitos_Curso 'MA1102', 'MA0101'
 EXECUTE Insertar_Requisitos_Curso 'MA1102', 'MA1403'
 EXECUTE Insertar_Requisitos_Curso 'TI1201', 'TI1103'
@@ -268,7 +269,8 @@ EXECUTE Mostrar_Requisitos_Curso 'TI2404'
 
 EXECUTE Mostrar_Correquisitos_Curso 'TI1401'
 
-SELECT * FROM EscuelaOArea
+SELECT * FROM PlanEstudio_Curso
+SELECT * FROM Curso
 
 EXECUTE Insertar_Escuela 'IC', 'Ingeniería en Computadores'
 DELETE FROM EscuelaOArea WHERE EscuelaOArea.IDEscuela = 'IC';

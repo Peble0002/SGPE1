@@ -20,10 +20,11 @@ public class Bloque {
    * @param pNumBloque 
    */
   public Bloque(String pIdCurso, String pNumPlan, int pNumBloque) {
+    this.idCursos = new ArrayList<String>();
     this.idCurso = pIdCurso;
     this.numPlan = pNumPlan;
     this.numBloque = pNumBloque;
-    this.idCursos.add(idCurso);
+    this.idCursos.add(pIdCurso);
   }
   
   public Bloque(String pIdCurso, String pNumPlan) {
