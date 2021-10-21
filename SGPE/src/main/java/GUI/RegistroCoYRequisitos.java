@@ -4,11 +4,18 @@
  */
 package GUI;
 
+import conexionBD.*;
+import javax.swing.JOptionPane;
+import logicadenegocios.*;
+
 /**
  *
  * @author Pablo Luis Aaron
  */
 public class RegistroCoYRequisitos extends javax.swing.JFrame {
+    CursoBD conexion = new CursoBD();
+    CursoRequisitosBD conexionRequisito = new CursoRequisitosBD();
+    CursoCorrequisitosBD conexionCorrequisito = new CursoCorrequisitosBD();
 
     /**
      * Creates new form RegistroCoYRequisitos
@@ -26,34 +33,39 @@ public class RegistroCoYRequisitos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        cbCodigoCursoRequisito = new javax.swing.JComboBox<>();
         btnRegistrarRequisito = new javax.swing.JButton();
-        cbCodigoCursoCorrequisito = new javax.swing.JComboBox<>();
         btnRegistrarCorrequisito = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        cbEscuelaPropietaria = new javax.swing.JComboBox<>();
-        cbCodigoCurso = new javax.swing.JComboBox<>();
         btnCerrar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        tbCursoPadre = new javax.swing.JTextField();
+        tbCursoRequisito = new javax.swing.JTextField();
+        tbCursoCorrequisito = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnRegistrarRequisito.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnRegistrarRequisito.setText("Registrar requisito");
+        btnRegistrarRequisito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarRequisitoActionPerformed(evt);
+            }
+        });
 
         btnRegistrarCorrequisito.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnRegistrarCorrequisito.setText("Registrar correquisito");
+        btnRegistrarCorrequisito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarCorrequisitoActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("ASIGNAR REQUISITOS Y CORREQUISITOS A UN CURSO");
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setText("Escuela propietaria del curso: ");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("Código del curso: ");
@@ -78,89 +90,89 @@ public class RegistroCoYRequisitos extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel7.setText("Código del curso");
 
+        tbCursoPadre.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+
+        tbCursoRequisito.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+
+        tbCursoCorrequisito.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(82, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(65, 65, 65))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tbCursoRequisito, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnRegistrarRequisito))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(77, 77, 77)
-                                .addComponent(jLabel4))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnRegistrarCorrequisito))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(jLabel2)))
-                        .addGap(43, 43, 43)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cbEscuelaPropietaria, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cbCodigoCurso, 0, 282, Short.MAX_VALUE)))
+                                .addGap(229, 229, 229)
+                                .addComponent(tbCursoCorrequisito, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 20, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(262, 262, 262)
+                        .addGap(257, 257, 257)
                         .addComponent(btnCerrar))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel6)
-                        .addGap(145, 145, 145)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbCodigoCursoCorrequisito, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnRegistrarRequisito)
-                                .addGap(208, 208, 208)
-                                .addComponent(btnRegistrarCorrequisito))
-                            .addComponent(cbCodigoCursoRequisito, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap()
+                                .addComponent(jLabel6))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(26, 26, 26)
-                                .addComponent(jLabel3)
-                                .addGap(250, 250, 250)
-                                .addComponent(jLabel7)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(77, 77, 77)
+                                .addComponent(jLabel4)))
+                        .addGap(98, 98, 98)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tbCursoPadre, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))))
+                .addGap(75, 75, 75))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(65, 65, 65))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel7)
+                .addGap(136, 136, 136))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(cbEscuelaPropietaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(cbCodigoCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
+                    .addComponent(tbCursoPadre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel7))
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cbCodigoCursoRequisito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbCodigoCursoCorrequisito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
-                        .addComponent(btnCerrar)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnRegistrarRequisito)
-                            .addComponent(btnRegistrarCorrequisito))
-                        .addGap(69, 69, 69))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel3))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tbCursoRequisito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tbCursoCorrequisito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnRegistrarRequisito)
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnRegistrarCorrequisito)
+                        .addGap(9, 9, 9)))
+                .addComponent(btnCerrar)
+                .addGap(81, 81, 81))
         );
 
         pack();
@@ -176,6 +188,48 @@ public class RegistroCoYRequisitos extends javax.swing.JFrame {
       
       this.dispose();
     }//GEN-LAST:event_btnCerrarActionPerformed
+
+    private void btnRegistrarRequisitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarRequisitoActionPerformed
+      Curso cursoPadre = new Curso(tbCursoPadre.getText());
+      Curso cursoRequisito = new Curso(tbCursoRequisito.getText());
+    
+      if(!conexion.existeCurso(cursoPadre) || 
+            !conexion.existeCurso(cursoRequisito)){
+        if(!conexion.existeCurso(cursoPadre)){
+          JOptionPane.showMessageDialog(null, "El curso consultado  no existe.");
+        }else{
+          JOptionPane.showMessageDialog(null, "El curso requisito no existe.");
+        }
+      }else{
+        if(conexionRequisito.existeRequisito(cursoPadre, cursoRequisito)){
+          JOptionPane.showMessageDialog(null, "Ya existe una relación de " + 
+                "requisitos entre los cursos ingresados.");
+        }else{
+        conexionRequisito.registrarRequisito(cursoPadre, cursoRequisito);
+        }
+      }
+    }//GEN-LAST:event_btnRegistrarRequisitoActionPerformed
+
+    private void btnRegistrarCorrequisitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarCorrequisitoActionPerformed
+      Curso cursoPadre = new Curso(tbCursoPadre.getText());
+      Curso cursoCorrequisito = new Curso(tbCursoCorrequisito.getText());
+    
+      if(!conexion.existeCurso(cursoPadre) || 
+            !conexion.existeCurso(cursoCorrequisito)){
+        if(!conexion.existeCurso(cursoPadre)){
+          JOptionPane.showMessageDialog(null, "El curso consultado  no existe.");
+        }else{
+          JOptionPane.showMessageDialog(null, "El curso correquisito no existe.");
+        }
+      }else{
+        if(conexionCorrequisito.existeCorrequisito(cursoPadre, cursoCorrequisito)){
+          JOptionPane.showMessageDialog(null, "Ya existe una relación de " + 
+                "correquisitos entre los cursos ingresados.");
+        }else{
+        conexionCorrequisito.registrarCorrequisito(cursoPadre, cursoCorrequisito);
+        }
+      } 
+    }//GEN-LAST:event_btnRegistrarCorrequisitoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,16 +270,14 @@ public class RegistroCoYRequisitos extends javax.swing.JFrame {
     private javax.swing.JButton btnCerrar;
     private javax.swing.JButton btnRegistrarCorrequisito;
     private javax.swing.JButton btnRegistrarRequisito;
-    private javax.swing.JComboBox<String> cbCodigoCurso;
-    private javax.swing.JComboBox<String> cbCodigoCursoCorrequisito;
-    private javax.swing.JComboBox<String> cbCodigoCursoRequisito;
-    private javax.swing.JComboBox<String> cbEscuelaPropietaria;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JTextField tbCursoCorrequisito;
+    private javax.swing.JTextField tbCursoPadre;
+    private javax.swing.JTextField tbCursoRequisito;
     // End of variables declaration//GEN-END:variables
 }

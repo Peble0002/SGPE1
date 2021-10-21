@@ -82,4 +82,43 @@ public class CursoCorrequisitosBD {
       JOptionPane.showMessageDialog(null, e.toString());
     }
   }
+  
+  public void registrarCorrequisito(Curso pCursoConsulta, Curso pCursoCorrequisito){
+    try{
+      Connection con = conexion.getConexion();
+      PreparedStatement ps = con.prepareStatement("INSERT INTO Correquisitos_"
+              + "Curso VALUES (?, ?)");
+      ps.setString(1, pCursoConsulta.getIdCursos());
+      ps.setString(2, pCursoCorrequisito.getIdCursos());
+      ps.executeUpdate();
+      JOptionPane.showMessageDialog(null, "Registro guardado.");
+    }catch(SQLException e){
+      JOptionPane.showMessageDialog(null, e.toString());
+    }
+  }
+  
+  /**
+   * 
+   * @param pCursoConsulta
+   * @param pCursoRequisito
+   * @return 
+   */
+  public boolean existeCorrequisito(Curso pCursoConsulta, Curso pCursoCorrequisito){
+    PreparedStatement ps;
+    ResultSet rs;
+    
+    try{
+      Connection con = conexion.getConexion();
+      ps = con.prepareStatement("SELECT * FROM Correquisitos_Curso WHERE "
+              + "Correquisitos_Curso.IDCursoConsultado = '" 
+              + pCursoConsulta.getIdCursos() + "' AND Correquisitos_Curso."
+              + "IDCursoCorrequisito = '"+pCursoCorrequisito.getIdCursos()+"'");
+      rs = ps.executeQuery();
+      JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
+      return rs.next();
+    }catch(SQLException e){
+      JOptionPane.showMessageDialog(null, e.toString());
+      return false;
+    }
+  }
 }

@@ -67,13 +67,27 @@ public class CursoRequisitosBD {
   public void eliminarRequisito(Curso pCursoConsulta, Curso pCursoRequisito){
     try{
       Connection con = conexion.getConexion();
-      PreparedStatement ps = con.prepareStatement("DELETE FROM Requisitos_Curso "
-              + "WHERE Requisitos_Curso.IDCursoConsultado = ? "
+      PreparedStatement ps = con.prepareStatement("DELETE FROM Requisitos_Curso"
+              + " WHERE Requisitos_Curso.IDCursoConsultado = ? "
               + "AND Requisitos_Curso.IDCursoRequisito = ?");
       ps.setString(1, pCursoConsulta.getIdCursos());
       ps.setString(2, pCursoRequisito.getIdCursos());
       ps.executeUpdate();
       JOptionPane.showMessageDialog(null, "Eliminación completada.");
+    }catch(SQLException e){
+      JOptionPane.showMessageDialog(null, e.toString());
+    }
+  }
+  
+  public void registrarRequisito(Curso pCursoConsulta, Curso pCursoRequisito){
+    try{
+      Connection con = conexion.getConexion();
+      PreparedStatement ps = con.prepareStatement("INSERT INTO Requisitos_Curso"
+              + " VALUES (?, ?)");
+      ps.setString(1, pCursoConsulta.getIdCursos());
+      ps.setString(2, pCursoRequisito.getIdCursos());
+      ps.executeUpdate();
+      JOptionPane.showMessageDialog(null, "Registro guardado.");
     }catch(SQLException e){
       JOptionPane.showMessageDialog(null, e.toString());
     }
