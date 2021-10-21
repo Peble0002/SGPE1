@@ -58,8 +58,9 @@ public class ConsultarPlanEstudio extends javax.swing.JFrame {
         modeloTabla.addRow(fila);
         }
 //        LocalDate fechaVigenciaLoca = conexion.obtenerFechaVigencia(codigo);
-//        String fechaString = conexion.obtenerStringFechaVigencia(fechaVigenciaLoca);
-//        jLabel3.setText(fechaString);
+//         conexion.obtenerStringFechaVigencia(fechaVigenciaLoca);
+        String fechaString = conexion.obtenerFechaVigencia(codigo);
+        jLabel3.setText(fechaString);
               
       }catch(SQLException e){
         JOptionPane.showMessageDialog(null, e.toString());

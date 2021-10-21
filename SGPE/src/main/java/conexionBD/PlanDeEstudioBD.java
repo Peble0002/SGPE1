@@ -7,7 +7,9 @@ import logicadenegocios.*;
 import java.sql.*;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import javax.swing.JOptionPane;
 /**
  *
@@ -46,22 +48,22 @@ public class PlanDeEstudioBD {
    * @param pCodigoPlan
    * @return 
    */
-  public LocalDate obtenerFechaVigencia(String pCodigoPlan){
+  public String obtenerFechaVigencia(String pCodigoPlan){
     PreparedStatement ps;
     ResultSet rs;
     
     try{
       Connection con = conexion.getConexion();
-      ps = con.prepareStatement("SELECT FechaEntradaVigencia FROM "
-              + "PlanEstudio WHERE NumeroPlan = ?");
+      ps = con.prepareStatement ("SELECT * FROM PlanEstudio WHERE NumeroPlan = ?");
       ps.setString(1, pCodigoPlan);
       rs = ps.executeQuery();
-      JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
-      Date fecha = rs.getDate(1); //Siempre devolverá un valor al haber sido comprobado que existía.
-      LocalDate vigencia = fecha.toLocalDate();
+      String vigencia = rs.getString("FechaEntradaVigencia");
+      
+//      Date fecha = rs.getDate("FechaEntradaVigencia"); //Siempre devolverá un valor al haber sido comprobado que existía.
+//      LocalDate vigencia = fecha.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
       return vigencia;
     }catch(SQLException e){
-      JOptionPane.showMessageDialog(null, e.toString());
+      System.out.print("ss");
       return null;
     }
   }
