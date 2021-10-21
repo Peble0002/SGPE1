@@ -5,9 +5,13 @@
 package GUI;
 
 import conexionBD.EscuelaOAreaAcademicaBD;
+import conexionBD.PlanDeEstudioBD;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import javax.swing.JOptionPane;
+import logicadenegocios.EscuelaOAreaAcademica;
+import logicadenegocios.PlanDeEstudio;
 
 /**
  *
@@ -15,6 +19,7 @@ import javax.swing.JOptionPane;
  */
 public class RegistroPlanEstudio extends javax.swing.JFrame {
   EscuelaOAreaAcademicaBD conexionEscuela = new EscuelaOAreaAcademicaBD();
+  PlanDeEstudioBD conexionplan = new PlanDeEstudioBD();
   
     /**
      * Creates new form RegistroPlanEstudio
@@ -184,7 +189,20 @@ public class RegistroPlanEstudio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegresarActionPerformed
 
   private void btnRegistrarPlanEstudiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarPlanEstudiosActionPerformed
-    // TODO add your handling code here:
+    EscuelaOAreaAcademica escuela = new EscuelaOAreaAcademica(cbEscuelaPropietaria.getName());
+    String numPlan = tbCodigoCurso.getName();
+    String info = (String) cbEscuelaPropietaria.getSelectedItem();
+    //String escuela = info.substring(0, info.indexOf("-")-1);
+    String ano = info.substring(info.charAt(0), info.indexOf("/")-1);
+    int anos = ano.indexOf(ano);
+    String me = info.substring(info.indexOf("/")+1, info.indexOf("/")+3);
+    int mes = me.indexOf(me);
+    String dia = info.substring(info.indexOf("/")+4, info.lastIndexOf(info));
+    int dias = dia.indexOf(dia);
+    LocalDate fechaEntradaVigencia = LocalDate.of(anos,mes,dias);
+    PlanDeEstudio plan = new PlanDeEstudio(escuela,numPlan,fechaEntradaVigencia );
+    conexionplan.insertarPlan(plan);
+
   }//GEN-LAST:event_btnRegistrarPlanEstudiosActionPerformed
 
     /**

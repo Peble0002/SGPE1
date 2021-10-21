@@ -27,7 +27,17 @@ public class EscuelaOAreaAcademica {
     this.nombre = pNombre;
     this.codigo = pCodigo;
     this.planesEstudio = pPlanesEstudio;
+    this.planes = new ArrayList<PlandeEscuela>();
+    
   }
+
+  public EscuelaOAreaAcademica(String nombre) {
+    this.nombre = nombre;
+    this.planesEstudio = new ArrayList<PlanDeEstudio>();
+    this.planes = new ArrayList<PlandeEscuela>();
+  }
+  
+  
   
   /**
    * 
