@@ -271,6 +271,8 @@ EXECUTE Mostrar_Correquisitos_Curso 'TI1401'
 
 SELECT * FROM PlanEstudio_Curso
 SELECT * FROM Curso
+SELECT * FROM Correquisitos_Curso
+SELECT * FROM Requisitos_Curso
 
 EXECUTE Insertar_Escuela 'IC', 'Ingeniería en Computadores'
 DELETE FROM EscuelaOArea WHERE EscuelaOArea.IDEscuela = 'IC';
