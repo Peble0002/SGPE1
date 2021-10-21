@@ -4,8 +4,13 @@
  */
 package GUI;
 import conexionBD.*;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -52,6 +57,10 @@ public class ConsultarPlanEstudio extends javax.swing.JFrame {
         }
         modeloTabla.addRow(fila);
         }
+//        LocalDate fechaVigenciaLoca = conexion.obtenerFechaVigencia(codigo);
+//        String fechaString = conexion.obtenerStringFechaVigencia(fechaVigenciaLoca);
+//        jLabel3.setText(fechaString);
+              
       }catch(SQLException e){
         JOptionPane.showMessageDialog(null, e.toString());
       }
@@ -82,7 +91,6 @@ public class ConsultarPlanEstudio extends javax.swing.JFrame {
   private void initComponents() {
 
     btnGenerarPDFYCorreo = new javax.swing.JButton();
-    tbVigenciaPlan = new javax.swing.JTextField();
     btnRegresar = new javax.swing.JButton();
     jLabel1 = new javax.swing.JLabel();
     jLabel6 = new javax.swing.JLabel();
@@ -91,17 +99,12 @@ public class ConsultarPlanEstudio extends javax.swing.JFrame {
     jScrollPane1 = new javax.swing.JScrollPane();
     tablaPlanEstudios = new javax.swing.JTable();
     btnRealizarBusqueda = new javax.swing.JButton();
+    jLabel3 = new javax.swing.JLabel();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
     btnGenerarPDFYCorreo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
     btnGenerarPDFYCorreo.setText("Generar PDF y enviar por correo");
-
-    tbVigenciaPlan.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        tbVigenciaPlanActionPerformed(evt);
-      }
-    });
 
     btnRegresar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
     btnRegresar.setText("Regresar");
@@ -146,6 +149,8 @@ public class ConsultarPlanEstudio extends javax.swing.JFrame {
       }
     });
 
+    jLabel3.setText(" ");
+
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
@@ -155,7 +160,7 @@ public class ConsultarPlanEstudio extends javax.swing.JFrame {
         .addComponent(btnRegresar)
         .addContainerGap(35, Short.MAX_VALUE))
       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addContainerGap(39, Short.MAX_VALUE)
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,7 +171,7 @@ public class ConsultarPlanEstudio extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addComponent(cbEscuelaPropietaria, javax.swing.GroupLayout.PREFERRED_SIZE, 517, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addComponent(tbVigenciaPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                  .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
               .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 841, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addContainerGap())
           .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -188,9 +193,9 @@ public class ConsultarPlanEstudio extends javax.swing.JFrame {
           .addComponent(cbEscuelaPropietaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(jLabel2))
         .addGap(32, 32, 32)
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-          .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-          .addComponent(tbVigenciaPlan))
+        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(jLabel3))
         .addGap(18, 18, 18)
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(btnGenerarPDFYCorreo)
@@ -209,14 +214,6 @@ public class ConsultarPlanEstudio extends javax.swing.JFrame {
 
     pack();
   }// </editor-fold>//GEN-END:initComponents
-
-  /**
-   * 
-   * @param evt 
-   */
-    private void tbVigenciaPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbVigenciaPlanActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tbVigenciaPlanActionPerformed
 
     /**
      * 
@@ -283,9 +280,9 @@ public class ConsultarPlanEstudio extends javax.swing.JFrame {
   private javax.swing.JComboBox<String> cbEscuelaPropietaria;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel2;
+  private javax.swing.JLabel jLabel3;
   private javax.swing.JLabel jLabel6;
   private javax.swing.JScrollPane jScrollPane1;
   private javax.swing.JTable tablaPlanEstudios;
-  private javax.swing.JTextField tbVigenciaPlan;
   // End of variables declaration//GEN-END:variables
 }

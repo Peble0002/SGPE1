@@ -6,6 +6,7 @@ package conexionBD;
 import logicadenegocios.*;
 import java.sql.*;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
 /**
@@ -45,7 +46,7 @@ public class PlanDeEstudioBD {
    * @param pCodigoPlan
    * @return 
    */
-  public Date obtenerFechaVigencia(String pCodigoPlan){
+  public LocalDate obtenerFechaVigencia(String pCodigoPlan){
     PreparedStatement ps;
     ResultSet rs;
     
@@ -56,11 +57,19 @@ public class PlanDeEstudioBD {
       ps.setString(1, pCodigoPlan);
       rs = ps.executeQuery();
       JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
-      return rs.getDate(1); //Siempre devolverá un valor al haber sido comprobado que existía.
+      Date fecha = rs.getDate(1); //Siempre devolverá un valor al haber sido comprobado que existía.
+      LocalDate vigencia = fecha.toLocalDate();
+      return vigencia;
     }catch(SQLException e){
       JOptionPane.showMessageDialog(null, e.toString());
       return null;
     }
+  }
+  
+  public String obtenerStringFechaVigencia(LocalDate pFecha){
+    DateTimeFormatter FORMATO = DateTimeFormatter.ofPattern("yyyy/MM/DD");
+    String fecha = pFecha.format(FORMATO);
+    return fecha;
   }
   
   /**
