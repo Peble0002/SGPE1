@@ -280,3 +280,7 @@ SELECT Curso.IDCurso, Curso.Nombre, PlanEstudio_Curso.NumeroBloque, Curso.Horas_
 SELECT EscuelaOArea.Nombre, Escuela_PlanEstudio.NumeroPlan FROM EscuelaOArea, Escuela_PlanEstudio WHERE EscuelaOArea.Nombre = 'Administración de Tecnología de Información' AND Escuela_PlanEstudio.NumeroPlan = '2051'
 
 SELECT Curso.IDCurso, Nombre, NumeroBloque, Horas_Lectivas, Creditos FROM Curso, PlanEstudio_Curso WHERE PlanEstudio_Curso.NumeroPlan = '2051' AND Curso.IDCurso = PlanEstudio_Curso.IDCurso ORDER BY(NumeroBloque)
+
+SELECT EscuelaOArea.IDEscuela, EscuelaOArea.Nombre, PlanEstudio_Curso.NumeroPlan FROM EscuelaOArea, Escuela_PlanEstudio, PlanEstudio_Curso WHERE PlanEstudio_Curso.IDCurso = 'TI1401' AND PlanEstudio_Curso.NumeroPlan = Escuela_PlanEstudio.NumeroPlan AND Escuela_PlanEstudio.IDEscuela = EscuelaOArea.IDEscuela;
+
+SELECT Requisitos_Curso.IDCursoRequisito, Curso.Nombre FROM Requisitos_Curso, Curso WHERE Requisitos_Curso.IDCursoConsultado = 'TI2402' AND Requisitos_Curso.IDCursoConsultado = Curso.IDCurso

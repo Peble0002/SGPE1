@@ -33,6 +33,13 @@ public class Curso {
     this.creditos = pCreditos;
     this.horasLectivas = pHorasLectivas;
   }
+  
+  /**
+   * @param pIdCursos
+   */
+  public Curso(String pIdCursos) {
+    this.idCursos = pIdCursos;
+  }
 
   /**
    * 

@@ -30,7 +30,7 @@ public class ConsultarPlanEstudio extends javax.swing.JFrame {
     
     private void cargarTabla() throws SQLException{
       String info = (String) cbEscuelaPropietaria.getSelectedItem();
-      String escuela = info.substring(0, info.indexOf("-")-1);
+      //String escuela = info.substring(0, info.indexOf("-")-1);
       String codigo = info.substring(info.indexOf(":")+2, info.length());
       
       //tbVigenciaPlan.setText(conexion.obtenerFechaVigencia(codigo).toString());

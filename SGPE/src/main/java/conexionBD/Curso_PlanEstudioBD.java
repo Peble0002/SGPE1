@@ -41,4 +41,20 @@ public class Curso_PlanEstudioBD {
       JOptionPane.showMessageDialog(null, e.toString());
     }
   }
+  
+  public ResultSet consultarPlanesEstudioCurso(Curso pCurso){
+    PreparedStatement ps;
+    ResultSet rs;
+    
+    try{
+      Connection con = conexion.getConexion();
+      ps = con.prepareStatement("SELECT EscuelaOArea.IDEscuela, EscuelaOArea.Nombre, PlanEstudio_Curso.NumeroPlan FROM EscuelaOArea, Escuela_PlanEstudio, PlanEstudio_Curso WHERE PlanEstudio_Curso.IDCurso = '" + pCurso.getIdCursos() + "' AND PlanEstudio_Curso.NumeroPlan = Escuela_PlanEstudio.NumeroPlan AND Escuela_PlanEstudio.IDEscuela = EscuelaOArea.IDEscuela;");
+      rs = ps.executeQuery();
+      JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
+      return rs;
+    }catch(SQLException e){
+      JOptionPane.showMessageDialog(null, e.toString());
+      return null;
+    }
+  }
 }

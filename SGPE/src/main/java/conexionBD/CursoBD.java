@@ -4,10 +4,7 @@
  */
 package conexionBD;
 import logicadenegocios.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import javax.swing.JOptionPane;
 
 /**
@@ -29,6 +26,20 @@ public class CursoBD {
       JOptionPane.showMessageDialog(null, "Registro guardado.");
     }catch(SQLException e){
       JOptionPane.showMessageDialog(null, e.toString());
+    }
+  }
+  
+  public boolean existeCurso(Curso pCurso){
+    ResultSet rs;
+    try{
+      Connection con = conexion.getConexion();
+      PreparedStatement ps = con.prepareStatement("SELECT * FROM Curso WHERE Curso.IDCurso = '" + pCurso.getIdCursos() + "'");
+      rs = ps.executeQuery();
+      JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
+      return rs.next();
+    }catch(SQLException e){
+      JOptionPane.showMessageDialog(null, e.toString());
+      return false;
     }
   }
 }
