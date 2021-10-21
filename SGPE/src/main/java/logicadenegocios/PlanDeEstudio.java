@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author pablo
+ * @author pablo luis aaron
  */
 public class PlanDeEstudio {
   private EscuelaOAreaAcademica escuela;
@@ -25,7 +25,8 @@ public class PlanDeEstudio {
    * @param pNumPlan
    * @param pFechaEntradaVigencia 
    */
-  public PlanDeEstudio(EscuelaOAreaAcademica pEscuela, String pNumPlan, LocalDate pFechaEntradaVigencia) {
+  public PlanDeEstudio(EscuelaOAreaAcademica pEscuela, String pNumPlan, 
+          LocalDate pFechaEntradaVigencia) {
     this.escuela = pEscuela;
     this.numPlan = pNumPlan;
     this.fechaEntradaVigencia = pFechaEntradaVigencia;
@@ -39,7 +40,8 @@ public class PlanDeEstudio {
    * @param pMes
    * @param pAno 
    */
-  public PlanDeEstudio(EscuelaOAreaAcademica pEscuela, String pNumPlan, int pDia, int pMes, int pAno) {
+  public PlanDeEstudio(EscuelaOAreaAcademica pEscuela, String pNumPlan, 
+          int pDia, int pMes, int pAno) {
     this.escuela = pEscuela;
     this.numPlan = pNumPlan;
     this.fechaEntradaVigencia = LocalDate.of(pAno, pMes, pDia);

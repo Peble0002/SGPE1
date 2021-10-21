@@ -26,6 +26,11 @@ public class ConsultarCorrequisitosCurso extends javax.swing.JFrame {
         initComponents();
     }
 
+    /**
+     * 
+     * @param pCurso
+     * @throws SQLException 
+     */
     private void cargarTabla(Curso pCurso) throws SQLException{
       DefaultTableModel modeloTabla = (DefaultTableModel) tablaPlanEstudios.getModel();
       modeloTabla.setRowCount(0);
@@ -162,6 +167,10 @@ public class ConsultarCorrequisitosCurso extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
+  /**
+   * 
+   * @param evt 
+   */
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         Principal nPrincipal = new Principal();
         nPrincipal.setVisible(true);
@@ -169,10 +178,18 @@ public class ConsultarCorrequisitosCurso extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
     private void tbCodigoCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbCodigoCursoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tbCodigoCursoActionPerformed
 
+  /**
+   * 
+   * @param evt 
+   */  
   private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
     Curso curso = new Curso(tbCodigoCurso.getText());
     try {

@@ -10,18 +10,27 @@ import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
 /**
  *
- * @author Aarón Soto
+ * @author Pablo Luis Aarón 
  */
 public class PlanDeEstudioBD {
   Conexion conexion = new Conexion();
   
+  /**
+   * 
+   * @param pCodigo
+   * @return 
+   */
   public ResultSet consultarPlanEstudio(String pCodigo){
     PreparedStatement ps;
     ResultSet rs;
     
     try{
       Connection con = conexion.getConexion();
-      ps = con.prepareStatement("SELECT Curso.IDCurso, Nombre, NumeroBloque, Horas_Lectivas, Creditos FROM Curso, PlanEstudio_Curso WHERE PlanEstudio_Curso.NumeroPlan = " + pCodigo + " AND Curso.IDCurso = PlanEstudio_Curso.IDCurso ORDER BY(NumeroBloque)");
+      ps = con.prepareStatement("SELECT Curso.IDCurso, Nombre, NumeroBloque,"
+              + " Horas_Lectivas, Creditos FROM Curso, PlanEstudio_Curso "
+              + "WHERE PlanEstudio_Curso.NumeroPlan = " + pCodigo 
+              + " AND Curso.IDCurso = PlanEstudio_Curso.IDCurso ORDER "
+                      + "BY(NumeroBloque)");
       rs = ps.executeQuery();
       JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
       return rs;
@@ -31,13 +40,19 @@ public class PlanDeEstudioBD {
     }
   }
   
+  /**
+   * 
+   * @param pCodigoPlan
+   * @return 
+   */
   public Date obtenerFechaVigencia(String pCodigoPlan){
     PreparedStatement ps;
     ResultSet rs;
     
     try{
       Connection con = conexion.getConexion();
-      ps = con.prepareStatement("SELECT FechaEntradaVigencia FROM PlanEstudio WHERE NumeroPlan = ?");
+      ps = con.prepareStatement("SELECT FechaEntradaVigencia FROM "
+              + "PlanEstudio WHERE NumeroPlan = ?");
       ps.setString(1, pCodigoPlan);
       rs = ps.executeQuery();
       JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
@@ -48,10 +63,15 @@ public class PlanDeEstudioBD {
     }
   }
   
+  /**
+   * 
+   * @param pPlan 
+   */
   public void insertarPlan(PlanDeEstudio pPlan){
     try{
       Connection con = conexion.getConexion();
-      PreparedStatement ps = con.prepareStatement("INSERT INTO PlanEstudio (NumeroPlan, FechaEntradaVigencia) VALUES (?,?)");
+      PreparedStatement ps = con.prepareStatement("INSERT INTO PlanEstudio "
+              + "(NumeroPlan, FechaEntradaVigencia) VALUES (?,?)");
       ps.setString(1, pPlan.getNumPlan());
       DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd LLLL yyyy");
       String formattedString = pPlan.getNumPlan().formatted(formatter);

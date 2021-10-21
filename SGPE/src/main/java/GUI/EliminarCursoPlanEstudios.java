@@ -11,7 +11,7 @@ import logicadenegocios.Bloque;
 
 /**
  *
- * @author LUIS LEITON
+ * @author Pablo Luis Aaron
  */
 public class EliminarCursoPlanEstudios extends javax.swing.JFrame {
   EscuelaPlanEstudioBD conexionPlanEscuela = new EscuelaPlanEstudioBD();
@@ -24,13 +24,15 @@ public class EliminarCursoPlanEstudios extends javax.swing.JFrame {
         cargarComboBoxEscuelas();
     }
     
+    
     private void cargarComboBoxEscuelas(){
       //ResultSet rs = conexionEscuela.consultarEscuelas();
       ResultSet rs = conexionPlanEscuela.consultarEscuelaPlan();
       
       try{
         while(rs.next()){
-          cbEscuelaPropietaria.addItem(rs.getString("Nombre") + " - Plan de estudio: " + rs.getString("NumeroPlan"));
+          cbEscuelaPropietaria.addItem(rs.getString("Nombre") 
+                  + " - Plan de estudio: " + rs.getString("NumeroPlan"));
         }
       }catch(SQLException e){
         JOptionPane.showMessageDialog(null, e.toString());
@@ -139,6 +141,10 @@ public class EliminarCursoPlanEstudios extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
+  /**
+   * 
+   * @param evt 
+   */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Principal nPrincipal = new Principal();
         nPrincipal.setVisible(true);
@@ -146,10 +152,18 @@ public class EliminarCursoPlanEstudios extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
     private void tbCodigoCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbCodigoCursoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tbCodigoCursoActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
   private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     String info = (String) cbEscuelaPropietaria.getSelectedItem();
     String curso = tbCodigoCurso.getText();

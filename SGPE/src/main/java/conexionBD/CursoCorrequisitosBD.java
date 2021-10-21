@@ -13,6 +13,11 @@ import javax.swing.JOptionPane;
 public class CursoCorrequisitosBD {
   Conexion conexion = new Conexion();
   
+  /**
+   * 
+   * @param pCurso
+   * @return 
+   */
   public ResultSet consultarCorrequisitos(Curso pCurso){
     PreparedStatement ps;
     ResultSet rs;
@@ -33,6 +38,12 @@ public class CursoCorrequisitosBD {
     }
   }
   
+  /**
+   * 
+   * @param pCursoConsulta
+   * @param pCursoRequisito
+   * @return 
+   */
   public boolean existeRequisito(Curso pCursoConsulta, Curso pCursoRequisito){
     PreparedStatement ps;
     ResultSet rs;
@@ -52,6 +63,11 @@ public class CursoCorrequisitosBD {
     }
   }
   
+  /**
+   * 
+   * @param pCursoConsulta
+   * @param pCursoRequisito 
+   */
   public void eliminarRequisito(Curso pCursoConsulta, Curso pCursoRequisito){
     try{
       Connection con = conexion.getConexion();

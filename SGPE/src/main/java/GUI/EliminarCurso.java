@@ -6,7 +6,7 @@ package GUI;
 
 /**
  *
- * @author LUIS LEITON
+ * @author Pablo Luis Aaron
  */
 public class EliminarCurso extends javax.swing.JFrame {
 
@@ -94,6 +94,10 @@ public class EliminarCurso extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
       Principal nPrincipal = new Principal();
       nPrincipal.setVisible(true);

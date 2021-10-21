@@ -6,7 +6,7 @@ package GUI;
 
 /**
  *
- * @author LUIS LEITON
+ * @author Pablo Luis Aaron
  */
 public class RegistroCoYRequisitos extends javax.swing.JFrame {
 
@@ -166,6 +166,10 @@ public class RegistroCoYRequisitos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
       Principal nPrincipal = new Principal();
       nPrincipal.setVisible(true);

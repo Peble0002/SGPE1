@@ -9,16 +9,20 @@ import logicadenegocios.*;
 
 /**
  *
- * @author Aarón Soto
+ * @author Pablo Luis Aarón
  */
 public class CursoPlanEstudioBD {
   Conexion conexion = new Conexion();
   
-  
+  /**
+   * 
+   * @param pCursoPlan 
+   */
   public void insertarCursoPlanEstudio(Bloque pCursoPlan){
     try{
       Connection con = conexion.getConexion();
-      PreparedStatement ps = con.prepareStatement("INSERT INTO PlanEstudio_Curso (IDCurso, NumeroPlan, NumeroBloque) VALUES (?,?,?)");
+      PreparedStatement ps = con.prepareStatement("INSERT INTO PlanEstudio_Curso "
+              + "(IDCurso, NumeroPlan, NumeroBloque) VALUES (?,?,?)");
       ps.setString(1, pCursoPlan.getIdCurso());
       ps.setString(2, pCursoPlan.getNumPlan());
       ps.setInt(3, pCursoPlan.getNumBloque());
@@ -29,10 +33,15 @@ public class CursoPlanEstudioBD {
     }
   }
   
+  /**
+   * 
+   * @param pBloque 
+   */
   public void eliminarCursoPlan(Bloque pBloque){
     try{
       Connection con = conexion.getConexion();
-      PreparedStatement ps = con.prepareStatement("DELETE FROM PlanEstudio_Curso WHERE IDCurso = ? AND NumeroPlan = ?");
+      PreparedStatement ps = con.prepareStatement("DELETE FROM PlanEstudio_Curso "
+              + "WHERE IDCurso = ? AND NumeroPlan = ?");
       ps.setString(1, pBloque.getIdCurso());
       ps.setString(2, pBloque.getNumPlan());
       ps.executeUpdate();
@@ -42,13 +51,23 @@ public class CursoPlanEstudioBD {
     }
   }
   
+  /**
+   * 
+   * @param pCurso
+   * @return 
+   */
   public ResultSet consultarPlanesEstudioCurso(Curso pCurso){
     PreparedStatement ps;
     ResultSet rs;
     
     try{
       Connection con = conexion.getConexion();
-      ps = con.prepareStatement("SELECT EscuelaOArea.IDEscuela, EscuelaOArea.Nombre, PlanEstudio_Curso.NumeroPlan FROM EscuelaOArea, Escuela_PlanEstudio, PlanEstudio_Curso WHERE PlanEstudio_Curso.IDCurso = '" + pCurso.getIdCursos() + "' AND PlanEstudio_Curso.NumeroPlan = Escuela_PlanEstudio.NumeroPlan AND Escuela_PlanEstudio.IDEscuela = EscuelaOArea.IDEscuela;");
+      ps = con.prepareStatement("SELECT EscuelaOArea.IDEscuela, EscuelaOArea.Nombre, "
+              + "PlanEstudio_Curso.NumeroPlan FROM EscuelaOArea, Escuela_PlanEstudio, "
+              + "PlanEstudio_Curso WHERE PlanEstudio_Curso.IDCurso = '" 
+              + pCurso.getIdCursos() + "' AND PlanEstudio_Curso.NumeroPlan = "
+              + "Escuela_PlanEstudio.NumeroPlan AND Escuela_PlanEstudio.IDEscuela "
+              + "= EscuelaOArea.IDEscuela;");
       rs = ps.executeQuery();
       JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
       return rs;

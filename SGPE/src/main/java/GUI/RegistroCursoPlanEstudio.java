@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Luis Leiton
+ * @author Pablo Luis Aaron
  */
 public class RegistroCursoPlanEstudio extends javax.swing.JFrame {
     CursoPlanEstudioBD conexion = new CursoPlanEstudioBD();
@@ -294,6 +294,10 @@ public class RegistroCursoPlanEstudio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * 
+     * @param evt 
+     */
   private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
     Principal nPrincipal = new Principal();
     nPrincipal.setVisible(true);
@@ -301,18 +305,34 @@ public class RegistroCursoPlanEstudio extends javax.swing.JFrame {
     this.dispose();
   }//GEN-LAST:event_btnRegresarActionPerformed
 
+  /**
+   * 
+   * @param evt 
+   */
   private void tbCodigoCursoPartePlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbCodigoCursoPartePlanActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_tbCodigoCursoPartePlanActionPerformed
 
+  /**
+   * 
+   * @param evt 
+   */
   private void tbCodigoCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbCodigoCursoActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_tbCodigoCursoActionPerformed
 
+  /**
+   * 
+   * @param evt 
+   */
   private void tbVigenciaPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbVigenciaPlanActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_tbVigenciaPlanActionPerformed
 
+  /**
+   * 
+   * @param evt 
+   */
   private void btnRegresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresar1ActionPerformed
     Principal nPrincipal = new Principal();
     nPrincipal.setVisible(true);
@@ -320,10 +340,18 @@ public class RegistroCursoPlanEstudio extends javax.swing.JFrame {
     this.dispose();
   }//GEN-LAST:event_btnRegresar1ActionPerformed
 
+  /**
+   * 
+   * @param evt 
+   */
   private void tbCodigoCursoPartePlan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbCodigoCursoPartePlan1ActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_tbCodigoCursoPartePlan1ActionPerformed
 
+  /**
+   * 
+   * @param evt 
+   */
     private void btnRegistrarPlanEstudios1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarPlanEstudios1ActionPerformed
      
       String codigoCurso = tbCodigoCursoPartePlan1.getText();
@@ -335,14 +363,17 @@ public class RegistroCursoPlanEstudio extends javax.swing.JFrame {
       conexion.insertarCursoPlanEstudio(cursoPlan);
     }//GEN-LAST:event_btnRegistrarPlanEstudios1ActionPerformed
 
-    //PARA CARGAR COMBO BOX
+    /**
+     * PARA CARGAR COMBO BOX
+     */
     private void cargarComboBoxEscuelas(){
       //ResultSet rs = conexionEscuela.consultarEscuelas();
       ResultSet rs = conexionPlanEscuela.consultarEscuelaPlan();
       
       try{
         while(rs.next()){
-          cbEscuelaPropietaria1.addItem(rs.getString("Nombre") + " - Plan de estudio: " + rs.getString("NumeroPlan"));
+          cbEscuelaPropietaria1.addItem(rs.getString("Nombre")
+                  + " - Plan de estudio: " + rs.getString("NumeroPlan"));
         }
       }catch(SQLException e){
         JOptionPane.showMessageDialog(null, e.toString());

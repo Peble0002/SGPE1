@@ -15,7 +15,7 @@ import logicadenegocios.PlanDeEstudio;
 
 /**
  *
- * @author LUIS LEITON
+ * @author Pablo Luis Aaron
  */
 public class RegistroPlanEstudio extends javax.swing.JFrame {
   EscuelaOAreaAcademicaBD conexionEscuela = new EscuelaOAreaAcademicaBD();
@@ -173,14 +173,26 @@ public class RegistroPlanEstudio extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
+  /**
+   * 
+   * @param evt 
+   */
     private void tbCodigoCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbCodigoCursoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tbCodigoCursoActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
     private void tbVigenciaPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbVigenciaPlanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tbVigenciaPlanActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
       Principal nPrincipal = new Principal();
       nPrincipal.setVisible(true);

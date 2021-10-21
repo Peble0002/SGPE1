@@ -8,11 +8,16 @@ import java.sql.*;
 import javax.swing.JOptionPane;
 /**
  *
- * @author Aarón Soto
+ * @author Pablo Luis Aarón 
  */
 public class CursoRequisitosBD {
   Conexion conexion = new Conexion();
   
+  /**
+   * 
+   * @param pCurso
+   * @return 
+   */
   public ResultSet consultarRequisitos(Curso pCurso){
     PreparedStatement ps;
     ResultSet rs;
@@ -29,13 +34,22 @@ public class CursoRequisitosBD {
     }
   }
   
+  /**
+   * 
+   * @param pCursoConsulta
+   * @param pCursoRequisito
+   * @return 
+   */
   public boolean existeRequisito(Curso pCursoConsulta, Curso pCursoRequisito){
     PreparedStatement ps;
     ResultSet rs;
     
     try{
       Connection con = conexion.getConexion();
-      ps = con.prepareStatement("SELECT * FROM Requisitos_Curso WHERE Requisitos_Curso.IDCursoConsultado = '" + pCursoConsulta.getIdCursos() + "' AND Requisitos_Curso.IDCursoRequisito = '" + pCursoRequisito.getIdCursos() + "'");
+      ps = con.prepareStatement("SELECT * FROM Requisitos_Curso WHERE "
+              + "Requisitos_Curso.IDCursoConsultado = '" 
+              + pCursoConsulta.getIdCursos() + "' AND Requisitos_Curso.IDCursoRequisito "
+                      + "= '" + pCursoRequisito.getIdCursos() + "'");
       rs = ps.executeQuery();
       JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
       return rs.next();
@@ -45,10 +59,17 @@ public class CursoRequisitosBD {
     }
   }
   
+  /**
+   * 
+   * @param pCursoConsulta
+   * @param pCursoRequisito 
+   */
   public void eliminarRequisito(Curso pCursoConsulta, Curso pCursoRequisito){
     try{
       Connection con = conexion.getConexion();
-      PreparedStatement ps = con.prepareStatement("DELETE FROM Requisitos_Curso WHERE Requisitos_Curso.IDCursoConsultado = ? AND Requisitos_Curso.IDCursoRequisito = ?");
+      PreparedStatement ps = con.prepareStatement("DELETE FROM Requisitos_Curso "
+              + "WHERE Requisitos_Curso.IDCursoConsultado = ? "
+              + "AND Requisitos_Curso.IDCursoRequisito = ?");
       ps.setString(1, pCursoConsulta.getIdCursos());
       ps.setString(2, pCursoRequisito.getIdCursos());
       ps.executeUpdate();

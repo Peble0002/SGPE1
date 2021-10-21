@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author LUIS LEITON
+ * @author Pablo Luis Aaron
  */
 public class RegistroEscuela extends javax.swing.JFrame {
   EscuelaOAreaAcademicaBD conexion = new EscuelaOAreaAcademicaBD();
@@ -126,6 +126,10 @@ public class RegistroEscuela extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
+  /**
+   * 
+   * @param evt 
+   */
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
       Principal nPrincipal = new Principal();
       nPrincipal.setVisible(true);
@@ -133,6 +137,10 @@ public class RegistroEscuela extends javax.swing.JFrame {
       this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
   private void btnRegistrarEscuelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarEscuelaActionPerformed
     String nombre = tbNombre.getText();
     String codigo = tbCodigo.getText();

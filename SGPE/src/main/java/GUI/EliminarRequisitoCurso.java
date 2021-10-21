@@ -10,7 +10,7 @@ import logicadenegocios.*;
 
 /**
  *
- * @author LUIS LEITON
+ * @author Pablo Luis Aaron
  */
 public class EliminarRequisitoCurso extends javax.swing.JFrame {
   CursoBD conexion = new CursoBD();
@@ -131,6 +131,10 @@ public class EliminarRequisitoCurso extends javax.swing.JFrame {
       this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+  /**
+   * 
+   * @param evt 
+   */
   private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     Curso cursoConsulta = new Curso(tbCursoConsulta.getText());
     Curso cursoRequisito = new Curso(tbCursoRequisito.getText());

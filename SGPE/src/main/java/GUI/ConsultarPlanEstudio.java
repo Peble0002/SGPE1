@@ -13,7 +13,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author LUIS LEITON
+ * @author Pablo Luis Aaron
  */
 public class ConsultarPlanEstudio extends javax.swing.JFrame {
   PlanDeEstudioBD conexion = new PlanDeEstudioBD();
@@ -28,6 +28,10 @@ public class ConsultarPlanEstudio extends javax.swing.JFrame {
         cargarComboBoxEscuelas();
     }
     
+    /**
+     * 
+     * @throws SQLException 
+     */
     private void cargarTabla() throws SQLException{
       String info = (String) cbEscuelaPropietaria.getSelectedItem();
       //String escuela = info.substring(0, info.indexOf("-")-1);
@@ -53,13 +57,15 @@ public class ConsultarPlanEstudio extends javax.swing.JFrame {
       }
     }
     
+    
     private void cargarComboBoxEscuelas(){
       //ResultSet rs = conexionEscuela.consultarEscuelas();
       ResultSet rs = conexionPlanEscuela.consultarEscuelaPlan();
       
       try{
         while(rs.next()){
-          cbEscuelaPropietaria.addItem(rs.getString("Nombre") + " - Plan de estudio: " + rs.getString("NumeroPlan"));
+          cbEscuelaPropietaria.addItem(rs.getString("Nombre") 
+                  + " - Plan de estudio: " + rs.getString("NumeroPlan"));
         }
       }catch(SQLException e){
         JOptionPane.showMessageDialog(null, e.toString());
@@ -204,10 +210,18 @@ public class ConsultarPlanEstudio extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
+  /**
+   * 
+   * @param evt 
+   */
     private void tbVigenciaPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbVigenciaPlanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tbVigenciaPlanActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
       Principal nPrincipal = new Principal();
       nPrincipal.setVisible(true);
@@ -215,6 +229,10 @@ public class ConsultarPlanEstudio extends javax.swing.JFrame {
       this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
   private void btnRealizarBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarBusquedaActionPerformed
     try {
       cargarTabla();

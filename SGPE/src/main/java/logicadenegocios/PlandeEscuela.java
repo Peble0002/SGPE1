@@ -7,7 +7,7 @@ package logicadenegocios;
 
 /**
  *
- * @author pablo
+ * @author pablo luis aaron
  */
 public class PlandeEscuela {
   protected String idEscuela;

@@ -9,15 +9,20 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Aarón Soto
+ * @author pablo Luis Aarón 
  */
 public class CursoBD {
   Conexion conexion = new Conexion();
   
+  /**
+   * 
+   * @param pCurso 
+   */
   public void insertarCurso(Curso pCurso){
     try{
       Connection con = conexion.getConexion();
-      PreparedStatement ps = con.prepareStatement("INSERT INTO Curso (IDCurso, Nombre, Creditos, Horas_Lectivas) VALUES (?,?,?,?)");
+      PreparedStatement ps = con.prepareStatement("INSERT INTO Curso (IDCurso, "
+              + "Nombre, Creditos, Horas_Lectivas) VALUES (?,?,?,?)");
       ps.setString(1, pCurso.getIdCursos());
       ps.setString(2, pCurso.getNombre());
       ps.setInt(3, pCurso.getCreditos());
@@ -29,11 +34,17 @@ public class CursoBD {
     }
   }
   
+  /**
+   * 
+   * @param pCurso
+   * @return 
+   */
   public boolean existeCurso(Curso pCurso){
     ResultSet rs;
     try{
       Connection con = conexion.getConexion();
-      PreparedStatement ps = con.prepareStatement("SELECT * FROM Curso WHERE Curso.IDCurso = '" + pCurso.getIdCursos() + "'");
+      PreparedStatement ps = con.prepareStatement("SELECT * FROM Curso WHERE "
+              + "Curso.IDCurso = '" + pCurso.getIdCursos() + "'");
       rs = ps.executeQuery();
       JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
       return rs.next();

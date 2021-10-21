@@ -13,7 +13,7 @@ import logicadenegocios.Curso;
 
 /**
  *
- * @author LUIS LEITON
+ * @author Pablo Luis Aaron
  */
 public class RegistroCursos extends javax.swing.JFrame {
   CursoBD conexionCurso = new CursoBD();
@@ -176,6 +176,10 @@ public class RegistroCursos extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
+  /**
+   * 
+   * @param evt 
+   */
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
       Principal nPrincipal = new Principal();
       nPrincipal.setVisible(true);
@@ -183,6 +187,10 @@ public class RegistroCursos extends javax.swing.JFrame {
       this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
   private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
     String nombre = tbNombreCurso.getText();
     String codigo = tbCodigoCurso.getText();
@@ -193,6 +201,7 @@ public class RegistroCursos extends javax.swing.JFrame {
     conexionCurso.insertarCurso(curso);
   }//GEN-LAST:event_btnRegistrarActionPerformed
 
+  
     private void cargarComboBox(){
       ResultSet rs = conexionEscuela .consultarEscuelas();
       

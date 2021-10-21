@@ -23,7 +23,8 @@ public class EscuelaOAreaAcademica {
    * @param pCodigo
    * @param pPlanesEstudio 
    */
-  public EscuelaOAreaAcademica(String pNombre, String pCodigo, ArrayList<PlanDeEstudio> pPlanesEstudio) {
+  public EscuelaOAreaAcademica(String pNombre, String pCodigo, 
+          ArrayList<PlanDeEstudio> pPlanesEstudio) {
     this.nombre = pNombre;
     this.codigo = pCodigo;
     this.planesEstudio = pPlanesEstudio;

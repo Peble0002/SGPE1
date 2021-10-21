@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Aarón Soto
+ * @author Pablo Luis Aarón 
  */
 public class EscuelaOAreaAcademicaBD {
   Conexion conexion = new Conexion();
@@ -20,10 +20,15 @@ public class EscuelaOAreaAcademicaBD {
   public EscuelaOAreaAcademicaBD() {
   }
   
+  /**
+   * 
+   * @param pEscuela 
+   */
   public void insertarEscuela(EscuelaOAreaAcademica pEscuela){
     try{
       Connection con = conexion.getConexion();
-      PreparedStatement ps = con.prepareStatement("INSERT INTO EscuelaOArea (IDEscuela, Nombre) VALUES (?,?)");
+      PreparedStatement ps = con.prepareStatement("INSERT INTO EscuelaOArea "
+              + "(IDEscuela, Nombre) VALUES (?,?)");
       ps.setString(1, pEscuela.getCodigo());
       ps.setString(2, pEscuela.getNombre());
       ps.executeUpdate();
@@ -33,6 +38,10 @@ public class EscuelaOAreaAcademicaBD {
     }
   }
   
+  /**
+   * 
+   * @return 
+   */
   public ResultSet consultarEscuelas(){
     PreparedStatement ps;
     ResultSet rs;
@@ -49,13 +58,19 @@ public class EscuelaOAreaAcademicaBD {
     }
   }
   
+  /**
+   * 
+   * @param pNombreEscuela
+   * @return 
+   */
   public String obtenerCodigoEscuela(String pNombreEscuela){
     PreparedStatement ps;
     ResultSet rs;
     
     try{
       Connection con = conexion.getConexion();
-      ps = con.prepareStatement("SELECT IDEscuela FROM EscuelaOArea WHERE Nombre = " + pNombreEscuela);
+      ps = con.prepareStatement("SELECT IDEscuela FROM EscuelaOArea "
+              + "WHERE Nombre = " + pNombreEscuela);
       rs = ps.executeQuery();
       JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
       return rs.getString(1); //Siempre devolverá un valor al haber sido comprobado que existía.

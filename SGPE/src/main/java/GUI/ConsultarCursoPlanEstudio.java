@@ -14,7 +14,7 @@ import conexionBD.*;
 
 /**
  *
- * @author LUIS LEITON
+ * @author Pablo Luis Aaron
  */
 public class ConsultarCursoPlanEstudio extends javax.swing.JFrame {
   CursoPlanEstudioBD conexion = new CursoPlanEstudioBD();
@@ -26,6 +26,11 @@ public class ConsultarCursoPlanEstudio extends javax.swing.JFrame {
         initComponents();
     }
     
+    /**
+     * 
+     * @param pCurso
+     * @throws SQLException 
+     */
     private void cargarTabla(Curso pCurso) throws SQLException{
       DefaultTableModel modeloTabla = (DefaultTableModel) tablaPlanEstudios.getModel();
       modeloTabla.setRowCount(0);
@@ -34,7 +39,8 @@ public class ConsultarCursoPlanEstudio extends javax.swing.JFrame {
       int columnas = rs.getMetaData().getColumnCount();
       
       if(!consulta.next()){
-        JOptionPane.showMessageDialog(null, "No existe el curso " + pCurso.getIdCursos() + " o no está relacionado a ningún plan de estudio.");
+        JOptionPane.showMessageDialog(null, "No existe el curso " + 
+        pCurso.getIdCursos() + " o no está relacionado a ningún plan de estudio.");
         return;
       }
       
@@ -172,10 +178,18 @@ public class ConsultarCursoPlanEstudio extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
+  /**
+   * 
+   * @param evt 
+   */
     private void tbCodigoCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbCodigoCursoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tbCodigoCursoActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         Principal nPrincipal = new Principal();
         nPrincipal.setVisible(true);
@@ -183,6 +197,10 @@ public class ConsultarCursoPlanEstudio extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
   private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
     Curso curso = new Curso(tbCodigoCurso.getText());
       try {

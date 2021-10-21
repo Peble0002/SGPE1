@@ -18,9 +18,14 @@ public class Conexion {
   String usuario = "admin";
   String contrasena = "sql123";
   String cadenaBase = "jdbc:sqlserver://localhost:1433/SGPE";
+  
   public Conexion(){
   }
   
+  /**
+   * 
+   * @return 
+   */
   public Connection getConexion(){
     String conexionUrl = "jdbc:sqlserver://localhost:1433;databaseName=SGPE";
     

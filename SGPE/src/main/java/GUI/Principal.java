@@ -7,7 +7,7 @@ import conexionBD.Conexion;
 
 /**
  *
- * @author LUIS LEITON
+ * @author Pablo Luis Aaron
  */
 public class Principal extends javax.swing.JFrame{
 
@@ -278,6 +278,10 @@ public class Principal extends javax.swing.JFrame{
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btnIrRegistroEscuelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrRegistroEscuelaActionPerformed
 
       RegistroEscuela RE = new RegistroEscuela();
@@ -286,6 +290,10 @@ public class Principal extends javax.swing.JFrame{
       this.dispose();  
     }//GEN-LAST:event_btnIrRegistroEscuelaActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btnIrRegistroCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrRegistroCursoActionPerformed
       RegistroCursos RC = new RegistroCursos();
       RC.setVisible(true);
@@ -293,6 +301,10 @@ public class Principal extends javax.swing.JFrame{
       this.dispose();
     }//GEN-LAST:event_btnIrRegistroCursoActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btnIrRegistroCoYRequisitosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrRegistroCoYRequisitosActionPerformed
       RegistroCoYRequisitos RCR = new RegistroCoYRequisitos();
       RCR.setVisible(true);
@@ -300,6 +312,10 @@ public class Principal extends javax.swing.JFrame{
       this.dispose();
     }//GEN-LAST:event_btnIrRegistroCoYRequisitosActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btnIrCrearPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrCrearPlanActionPerformed
       RegistroPlanEstudio RPE = new RegistroPlanEstudio();
       RPE.setVisible(true);
@@ -307,6 +323,10 @@ public class Principal extends javax.swing.JFrame{
       this.dispose();
     }//GEN-LAST:event_btnIrCrearPlanActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btnIrConsultarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrConsultarPlanActionPerformed
       ConsultarPlanEstudio CPE = new ConsultarPlanEstudio();
       CPE.setVisible(true);
@@ -314,42 +334,71 @@ public class Principal extends javax.swing.JFrame{
       this.dispose();
     }//GEN-LAST:event_btnIrConsultarPlanActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btnIrConsultarPlanConCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrConsultarPlanConCursoActionPerformed
       ConsultarCursoPlanEstudio CEPE = new ConsultarCursoPlanEstudio();
       CEPE.setVisible(true);
       this.dispose();
     }//GEN-LAST:event_btnIrConsultarPlanConCursoActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btnIrConsultarRequisitosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrConsultarRequisitosActionPerformed
       ConsultarRequisitosCurso CRC = new ConsultarRequisitosCurso();
       CRC.setVisible(true);
       this.dispose();
     }//GEN-LAST:event_btnIrConsultarRequisitosActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btnIrConsultarCorrequisitosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrConsultarCorrequisitosActionPerformed
       ConsultarCorrequisitosCurso CCC = new ConsultarCorrequisitosCurso();
       CCC.setVisible(true);
       this.dispose();
     }//GEN-LAST:event_btnIrConsultarCorrequisitosActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
+    
     private void btnIrEliminarRequisitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrEliminarRequisitoActionPerformed
       EliminarRequisitoCurso ERC = new EliminarRequisitoCurso();
       ERC.setVisible(true);
       this.dispose();
     }//GEN-LAST:event_btnIrEliminarRequisitoActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btnIrEliminarCursoPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrEliminarCursoPlanActionPerformed
       EliminarCursoPlanEstudios ECPE = new EliminarCursoPlanEstudios();
       ECPE.setVisible(true);
       this.dispose();
     }//GEN-LAST:event_btnIrEliminarCursoPlanActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btnIrEliminarCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrEliminarCursoActionPerformed
       EliminarCurso EC = new EliminarCurso();
       EC.setVisible(true);
       this.dispose();
     }//GEN-LAST:event_btnIrEliminarCursoActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btnIrAgregarCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrAgregarCursoActionPerformed
       RegistroCursoPlanEstudio RCPE = new RegistroCursoPlanEstudio();
       RCPE.setVisible(true);
