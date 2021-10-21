@@ -139,11 +139,17 @@ public class EliminarRequisitoCurso extends javax.swing.JFrame {
     Curso cursoConsulta = new Curso(tbCursoConsulta.getText());
     Curso cursoRequisito = new Curso(tbCursoRequisito.getText());
     
-    if(!conexion.existeCurso(cursoConsulta) || !conexion.existeCurso(cursoRequisito)){
-      JOptionPane.showMessageDialog(null, "El curso consultado o el curso requisito no existen.");
+    if(!conexion.existeCurso(cursoConsulta) || 
+            !conexion.existeCurso(cursoRequisito)){
+      if(!conexion.existeCurso(cursoConsulta)){
+        JOptionPane.showMessageDialog(null, "El curso consultado  no existe.");
+      }else{
+        JOptionPane.showMessageDialog(null, "El curso requisito no existe.");
+      }
     }else{
       if(!conexionRequisito.existeRequisito(cursoConsulta, cursoRequisito)){
-        JOptionPane.showMessageDialog(null, "No existe una relación de requisitos entre los cursos ingresados.");
+        JOptionPane.showMessageDialog(null, "No existe una relación de " + 
+                "requisitos entre los cursos ingresados.");
       }else{
         conexionRequisito.eliminarRequisito(cursoConsulta, cursoRequisito);
       }

@@ -53,4 +53,42 @@ public class CursoBD {
       return false;
     }
   }
+  
+  /**
+   * 
+   * @param pCurso
+   * @return 
+   */
+  public boolean existeCursoEnPlan(Curso pCurso){
+    ResultSet rs;
+    try{
+      Connection con = conexion.getConexion();
+      PreparedStatement ps = con.prepareStatement("SELECT * FROM PlanEstudio_" +
+              "Curso WHERE PlanEstudio_Curso.IDCurso = '" + pCurso.getIdCursos()
+              + "'");
+      rs = ps.executeQuery();
+      JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
+      return rs.next();
+    }catch(SQLException e){
+      JOptionPane.showMessageDialog(null, e.toString());
+      return false;
+    }
+  }
+  
+  /**
+   * 
+   * @param pCurso
+   */
+  public void eliminarCurso(Curso pCurso){
+    try{
+      Connection con = conexion.getConexion();
+      PreparedStatement ps = con.prepareStatement("DELETE FROM PlanEstudio_"
+              + "Curso WHERE PlanEstudio_Curso.IDCurso = ?");
+      ps.setString(1, pCurso.getIdCursos());
+      ps.executeUpdate();
+      JOptionPane.showMessageDialog(null, "Eliminación completada.");
+    }catch(SQLException e){
+      JOptionPane.showMessageDialog(null, e.toString());
+    }
+  }
 }
