@@ -3,8 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package GUI;
-import conexionBD.Curso_PlanEstudioBD;
-import conexionBD.Escuela_PlanEstudioBD;
+import conexionBD.CursoPlanEstudioBD;
+import conexionBD.EscuelaPlanEstudioBD;
 import logicadenegocios.Bloque;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,8 +17,8 @@ import javax.swing.JOptionPane;
  * @author Luis Leiton
  */
 public class RegistroCursoPlanEstudio extends javax.swing.JFrame {
-    Curso_PlanEstudioBD conexion = new Curso_PlanEstudioBD();
-    Escuela_PlanEstudioBD conexionPlanEscuela = new Escuela_PlanEstudioBD();
+    CursoPlanEstudioBD conexion = new CursoPlanEstudioBD();
+    EscuelaPlanEstudioBD conexionPlanEscuela = new EscuelaPlanEstudioBD();
 
   /**
    * Creates new form RegistroCursoPlanEstudio

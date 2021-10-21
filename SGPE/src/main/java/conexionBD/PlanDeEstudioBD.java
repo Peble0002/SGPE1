@@ -5,8 +5,8 @@
 package conexionBD;
 import logicadenegocios.*;
 import java.sql.*;
-import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
 /**
  *
@@ -47,4 +47,20 @@ public class PlanDeEstudioBD {
       return null;
     }
   }
+  
+  public void insertarPlan(PlanDeEstudio pPlan){
+    try{
+      Connection con = conexion.getConexion();
+      PreparedStatement ps = con.prepareStatement("INSERT INTO PlanEstudio (NumeroPlan, FechaEntradaVigencia) VALUES (?,?)");
+      ps.setString(1, pPlan.getNumPlan());
+      DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd LLLL yyyy");
+      String formattedString = pPlan.getNumPlan().formatted(formatter);
+      ps.setString(2, formattedString);
+      ps.executeUpdate();
+      JOptionPane.showMessageDialog(null, "Registro guardado.");
+    }catch(SQLException e){
+      JOptionPane.showMessageDialog(null, e.toString());
+    }
+  }
+  
 }

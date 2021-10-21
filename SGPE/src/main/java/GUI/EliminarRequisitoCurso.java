@@ -14,7 +14,7 @@ import logicadenegocios.*;
  */
 public class EliminarRequisitoCurso extends javax.swing.JFrame {
   CursoBD conexion = new CursoBD();
-  Curso_RequisitosBD conexionRequisito = new Curso_RequisitosBD();
+  CursoRequisitosBD conexionRequisito = new CursoRequisitosBD();
     /**
      * Creates new form EliminarRequisitoCurso
      */

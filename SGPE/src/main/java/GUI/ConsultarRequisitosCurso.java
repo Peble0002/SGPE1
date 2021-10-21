@@ -17,7 +17,7 @@ import conexionBD.*;
  * @author LUIS LEITON
  */
 public class ConsultarRequisitosCurso extends javax.swing.JFrame {
-  Curso_RequisitosBD conexion = new Curso_RequisitosBD();
+  CursoRequisitosBD conexion = new CursoRequisitosBD();
     /**
      * Creates new form ConsultarRequisitosCurso
      */
@@ -28,8 +28,8 @@ public class ConsultarRequisitosCurso extends javax.swing.JFrame {
     private void cargarTabla(Curso pCurso) throws SQLException{
       DefaultTableModel modeloTabla = (DefaultTableModel) tablaPlanEstudios.getModel();
       modeloTabla.setRowCount(0);
-      ResultSet rs = conexion.consultarPlanesEstudioCurso(pCurso);
-      ResultSet consulta = conexion.consultarPlanesEstudioCurso(pCurso);
+      ResultSet rs = conexion.consultarRequisitos(pCurso);
+      ResultSet consulta = conexion.consultarRequisitos(pCurso);
       int columnas = rs.getMetaData().getColumnCount();
       
       if(!consulta.next()){

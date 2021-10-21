@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
 public class ConsultarPlanEstudio extends javax.swing.JFrame {
   PlanDeEstudioBD conexion = new PlanDeEstudioBD();
   EscuelaOAreaAcademicaBD conexionEscuela = new EscuelaOAreaAcademicaBD();
-  Escuela_PlanEstudioBD conexionPlanEscuela = new Escuela_PlanEstudioBD();
+  EscuelaPlanEstudioBD conexionPlanEscuela = new EscuelaPlanEstudioBD();
 
     /**
      * Creates new form ConsultarPlanEstudio

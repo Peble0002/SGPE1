@@ -17,7 +17,7 @@ import conexionBD.*;
  * @author LUIS LEITON
  */
 public class ConsultarCursoPlanEstudio extends javax.swing.JFrame {
-  Curso_PlanEstudioBD conexion = new Curso_PlanEstudioBD();
+  CursoPlanEstudioBD conexion = new CursoPlanEstudioBD();
 
     /**
      * Creates new form ConsultarCursoPlanEstudio

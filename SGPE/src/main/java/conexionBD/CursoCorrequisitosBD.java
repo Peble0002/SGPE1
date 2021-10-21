@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 public class CursoCorrequisitosBD {
   Conexion conexion = new Conexion();
   
-  public ResultSet consultarPlanesEstudioCurso(Curso pCurso){
+  public ResultSet consultarCorrequisitos(Curso pCurso){
     PreparedStatement ps;
     ResultSet rs;
     

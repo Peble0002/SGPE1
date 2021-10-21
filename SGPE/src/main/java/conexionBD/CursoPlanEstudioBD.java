@@ -11,7 +11,7 @@ import logicadenegocios.*;
  *
  * @author Aarón Soto
  */
-public class Curso_PlanEstudioBD {
+public class CursoPlanEstudioBD {
   Conexion conexion = new Conexion();
   
   

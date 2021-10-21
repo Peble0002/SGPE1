@@ -14,8 +14,8 @@ import logicadenegocios.Bloque;
  * @author LUIS LEITON
  */
 public class EliminarCursoPlanEstudios extends javax.swing.JFrame {
-  Escuela_PlanEstudioBD conexionPlanEscuela = new Escuela_PlanEstudioBD();
-  Curso_PlanEstudioBD  conexionCursoPlan = new Curso_PlanEstudioBD ();
+  EscuelaPlanEstudioBD conexionPlanEscuela = new EscuelaPlanEstudioBD();
+  CursoPlanEstudioBD  conexionCursoPlan = new CursoPlanEstudioBD ();
     /**
      * Creates new form EliminarCursoPlanEstudios
      */

@@ -10,10 +10,10 @@ import javax.swing.JOptionPane;
  *
  * @author Aarón Soto
  */
-public class Curso_RequisitosBD {
+public class CursoRequisitosBD {
   Conexion conexion = new Conexion();
   
-  public ResultSet consultarPlanesEstudioCurso(Curso pCurso){
+  public ResultSet consultarRequisitos(Curso pCurso){
     PreparedStatement ps;
     ResultSet rs;
     

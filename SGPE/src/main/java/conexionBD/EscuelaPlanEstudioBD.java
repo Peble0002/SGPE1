@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  *
  * @author Aarón Soto
  */
-public class Escuela_PlanEstudioBD {
+public class EscuelaPlanEstudioBD {
   Conexion conexion = new Conexion();
   
   public boolean existePlan(String pEscuela, String pCodigo){
