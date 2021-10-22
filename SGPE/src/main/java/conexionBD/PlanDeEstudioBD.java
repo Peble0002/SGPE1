@@ -12,16 +12,17 @@ import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import javax.swing.JOptionPane;
 /**
- *
- * @author Pablo Luis Aarón 
+ * Abstracción de la clase PlanDeEstudioBD
+ * @author Pablo Chaves, Aaron Soto y Luis Leitón 
+ * @version (24/10/2021)
  */
 public class PlanDeEstudioBD {
   Conexion conexion = new Conexion();
   
   /**
-   * 
-   * @param pCodigo
-   * @return 
+   * Método para consultar planes de estudio
+   * @param pCodigo de tipo String
+   * @return un ResultSet con la información de los planes de estudio
    */
   public ResultSet consultarPlanEstudio(String pCodigo){
     PreparedStatement ps;
@@ -44,9 +45,9 @@ public class PlanDeEstudioBD {
   }
   
   /**
-   * 
-   * @param pCodigoPlan
-   * @return 
+   * Método para obtener la fecha de vigencia del plan de estudio
+   * @param pCodigoPlan de tipo String
+   * @return un String con la fecha de vigencia
    */
   public String obtenerFechaVigencia(String pCodigoPlan){
     PreparedStatement ps;
@@ -68,6 +69,11 @@ public class PlanDeEstudioBD {
     }
   }
   
+  /**
+   * Método para obtener el string de la fecha de vigencia
+   * @param pFecha de tipo LocalDate
+   * @return String con la fecha de vigencia
+   */
   public String obtenerStringFechaVigencia(LocalDate pFecha){
     DateTimeFormatter FORMATO = DateTimeFormatter.ofPattern("yyyy/MM/DD");
     String fecha = pFecha.format(FORMATO);
@@ -75,8 +81,8 @@ public class PlanDeEstudioBD {
   }
   
   /**
-   * 
-   * @param pPlan 
+   * Método para insertar un plan de estudios
+   * @param pPlan de tipo PlanDeEstudio
    */
   public void insertarPlan(PlanDeEstudio pPlan){
     try{

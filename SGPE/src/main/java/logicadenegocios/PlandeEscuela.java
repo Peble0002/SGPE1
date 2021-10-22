@@ -6,51 +6,40 @@
 package logicadenegocios;
 
 /**
- *
- * @author pablo luis aaron
+ * Abstracción de la clase PlandeEscuela
+ * @author Pablo Chaves, Aaron Soto y Luis Leitón 
+ * @version (24/10/2021)
  */
 public class PlandeEscuela {
   protected String idEscuela;
   protected String numPlan;
 
   /**
-   * 
-   * @param pIdEscuela
-   * @param pNumPlan 
+   * Constructor de la clase PlandeEscuela
+   * @param pIdEscuela de tipo String
+   * @param pNumPlan de tipo String
    */
-  public PlandeEscuela(String pIdEscuela, String pNumPlan) {
-    this.idEscuela = pIdEscuela;
-    this.numPlan = pNumPlan;
+ public PlandeEscuela(String pIdEscuela, String pNumPlan) {
+   this.idEscuela = pIdEscuela;
+   this.numPlan = pNumPlan;
+ }
+
+ 
+ public String getIdEscuela() {
+   return idEscuela;
   }
 
-  /**
-   * 
-   * @return 
-   */
-  public String getIdEscuela() {
-    return idEscuela;
+ 
+ public void setIdEscuela(String pIdEscuela) {
+   this.idEscuela = pIdEscuela;
   }
 
-  /**
-   * 
-   * @param pIdEscuela 
-   */
-  public void setIdEscuela(String pIdEscuela) {
-    this.idEscuela = pIdEscuela;
-  }
-
-  /**
-   * 
-   * @return 
-   */
+  
   public String getNumPlan() {
     return numPlan;
   }
 
-  /**
-   * 
-   * @param pNumPlan 
-   */
+  
   public void setNumPlan(String pNumPlan) {
     this.numPlan = pNumPlan;
   }

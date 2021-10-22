@@ -9,8 +9,9 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 /**
- *
- * @author pablo aaron luis
+ * Abstracción de la clase Curso
+ * @author Pablo Chaves, Aaron Soto y Luis Leitón 
+ * @version (24/10/2021)
  */
 public class Curso {
   private String nombre;
@@ -22,10 +23,11 @@ public class Curso {
   private Bloque bloque;
 
   /**
-   * @param pNombre
-   * @param pIdCursos
-   * @param pCreditos
-   * @param pHorasLectivas 
+   * Constructor de la clase Curso
+   * @param pNombre de tipo String
+   * @param pIdCursos de tipo String 
+   * @param pCreditos de tipo Int
+   * @param pHorasLectivas de tipo Int
    */
   public Curso(String pNombre, String pIdCursos, int pCreditos, int pHorasLectivas) {
     this.nombre = pNombre;
@@ -35,82 +37,59 @@ public class Curso {
   }
   
   /**
-   * @param pIdCursos
+   * Constructor de la clase Curso
+   * @param pIdCursos de tipo String 
    */
   public Curso(String pIdCursos) {
     this.idCursos = pIdCursos;
   }
 
-  /**
-   * 
-   * @return 
-   */
+  
   public String getNombre() {
     return nombre;
   }
 
-  /**
-   * 
-   * @param pNombre 
-   */
+
   public void setNombre(String pNombre) {
     this.nombre = pNombre;
   }
 
-  /**
-   * 
-   * @return 
-   */
+  
   public String getIdCursos() {
     return idCursos;
   }
 
-  /**
-   * 
-   * @param pIdCursos 
-   */
+  
   public void setIdCursos(String pIdCursos) {
     this.idCursos = pIdCursos;
   }
 
-  /**
-   * 
-   * @return 
-   */
+  
   public int getCreditos() {
     return creditos;
   }
 
-  /**
-   * 
-   * @param pCreditos 
-   */
+  
   public void setCreditos(int pCreditos) {
     this.creditos = pCreditos;
   }
 
-  /**
-   * 
-   * @return 
-   */
+  
   public int getHorasLectivas() {
     return horasLectivas;
   }
 
-  /**
-   * 
-   * @param pHorasLectivas 
-   */
+  
   public void setHorasLectivas(int pHorasLectivas) {
     this.horasLectivas = pHorasLectivas;
   }
   
   /**
-   * 
-   * @param pNombre
-   * @param pIdCursos
-   * @param pCreditos
-   * @param pHorasLectivas 
+   * Método para registrar un curso
+   * @param pNombre de tipo String
+   * @param pIdCursos de tipo String
+   * @param pCreditos de tipo int
+   * @param pHorasLectivas de tipo int
    */
   public void registrarCurso(String pNombre, String pIdCursos, int pCreditos, int pHorasLectivas) {
     nombre = pNombre;
@@ -121,50 +100,32 @@ public class Curso {
     correquisitos= new ArrayList<Correquisito>();
   }
 
-  /**
-   * 
-   * @return 
-   */
+  
   public ArrayList<Requisito> getRequisitos() {
     return requisitos;
   }
 
-  /**
-   * 
-   * @param pRequisitos 
-   */
+ 
   public void setRequisitos(ArrayList<Requisito> pRequisitos) {
     this.requisitos = pRequisitos;
   }
 
-  /**
-   * 
-   * @return 
-   */
+  
   public ArrayList<Correquisito> getCorrequisitos() {
     return correquisitos;
   }
 
-  /**
-   * 
-   * @param pCorrequisitos 
-   */
+  
   public void setCorrequisitos(ArrayList<Correquisito> pCorrequisitos) {
     this.correquisitos = pCorrequisitos;
   }
 
-  /**
-   * 
-   * @return 
-   */
+
   public Bloque getBloque() {
     return bloque;
   }
 
-  /**
-   * 
-   * @param bloque 
-   */
+  
   public void setBloque(Bloque bloque) {
     this.bloque = bloque;
   }

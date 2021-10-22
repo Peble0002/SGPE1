@@ -9,17 +9,18 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 /**
- *
- * @author Pablo Luis Aarón
+ * Abstracción de la clase EscuelaPlanEstudioBD
+ * @author Pablo Chaves, Aaron Soto y Luis Leitón 
+ * @version (24/10/2021)
  */
 public class EscuelaPlanEstudioBD {
   Conexion conexion = new Conexion();
   
   /**
-   * 
-   * @param pEscuela
-   * @param pCodigo
-   * @return 
+   * Método para verificar si existe un plan de estudios en una escuela
+   * @param pEscuela de tipo String
+   * @param pCodigo de tipo String
+   * @return boolean, donde el false significa que no existe el plan de estudios
    */
   public boolean existePlan(String pEscuela, String pCodigo){
     PreparedStatement ps;
@@ -41,8 +42,8 @@ public class EscuelaPlanEstudioBD {
   }
   
   /**
-   * 
-   * @return 
+   * Método para consultar la información de las escuelas y planes de estudio
+   * @return ResultSet con la información de las escuelas y planes de estudio
    */
   public ResultSet consultarEscuelaPlan(){
     PreparedStatement ps;

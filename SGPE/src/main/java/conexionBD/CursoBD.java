@@ -8,15 +8,16 @@ import java.sql.*;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author pablo Luis Aarón 
+ * Abstracción de la clase CursoBD
+ * @author Pablo Chaves, Aaron Soto y Luis Leitón 
+ * @version (24/10/2021)
  */
 public class CursoBD {
   Conexion conexion = new Conexion();
   
   /**
-   * 
-   * @param pCurso 
+   * Método para insertar un curso en la base de datos
+   * @param pCurso de tipo curso
    */
   public void insertarCurso(Curso pCurso){
     try{
@@ -35,9 +36,9 @@ public class CursoBD {
   }
   
   /**
-   * 
-   * @param pCurso
-   * @return 
+   * Método para verificar si existe un curso en la base de datos
+   * @param pCurso de tipo curso
+   * @return un boolean, retorna false si no existe
    */
   public boolean existeCurso(Curso pCurso){
     ResultSet rs;
@@ -55,9 +56,9 @@ public class CursoBD {
   }
   
   /**
-   * 
-   * @param pCurso
-   * @return 
+   * Método para determinar si existe un curso en el plan de estudios
+   * @param pCurso de tipo curso 
+   * @return un boolean, retorna false si no existe
    */
   public boolean existeCursoEnPlan(Curso pCurso){
     ResultSet rs;
@@ -76,8 +77,8 @@ public class CursoBD {
   }
   
   /**
-   * 
-   * @param pCurso
+   * Método para eliminar un curso de la base de datos 
+   * @param pCurso de tipo curso
    */
   public void eliminarCurso(Curso pCurso){
     try{

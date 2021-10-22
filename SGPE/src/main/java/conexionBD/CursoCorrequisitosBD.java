@@ -7,16 +7,17 @@ import logicadenegocios.*;
 import java.sql.*;
 import javax.swing.JOptionPane;
 /**
- *
- * @author Pablo Luis Aaron
+ * Abstracción de la clase CursoCorrequisitosBD
+ * @author Pablo Chaves, Aaron Soto y Luis Leitón 
+ * @version (24/10/2021)
  */
 public class CursoCorrequisitosBD {
   Conexion conexion = new Conexion();
   
   /**
-   * 
-   * @param pCurso
-   * @return 
+   * Método para consultar los correquisitos de un curso
+   * @param pCurso de tipo curso
+   * @return ResultSet con toda la información de los cursos y sus correquisitos
    */
   public ResultSet consultarCorrequisitos(Curso pCurso){
     PreparedStatement ps;
@@ -39,10 +40,10 @@ public class CursoCorrequisitosBD {
   }
   
   /**
-   * 
-   * @param pCursoConsulta
-   * @param pCursoRequisito
-   * @return 
+   * Método para verificar si existe un requisito de un curso
+   * @param pCursoConsulta de tipo curso
+   * @param pCursoRequisito de tipo curso
+   * @return boolean, en donde retorna false si no existe 
    */
   public boolean existeRequisito(Curso pCursoConsulta, Curso pCursoRequisito){
     PreparedStatement ps;
@@ -64,9 +65,9 @@ public class CursoCorrequisitosBD {
   }
   
   /**
-   * 
-   * @param pCursoConsulta
-   * @param pCursoRequisito 
+   * Método para eliminar un requisito de un curso
+   * @param pCursoConsulta de tipo curso
+   * @param pCursoRequisito de tipo curso
    */
   public void eliminarRequisito(Curso pCursoConsulta, Curso pCursoRequisito){
     try{
@@ -83,6 +84,11 @@ public class CursoCorrequisitosBD {
     }
   }
   
+  /**
+   * Método para registrar los correquisitos de un curso
+   * @param pCursoConsulta
+   * @param pCursoCorrequisito 
+   */
   public void registrarCorrequisito(Curso pCursoConsulta, Curso pCursoCorrequisito){
     try{
       Connection con = conexion.getConexion();
@@ -98,10 +104,10 @@ public class CursoCorrequisitosBD {
   }
   
   /**
-   * 
+   * Método para verificar si existe un correquisito de un curso
    * @param pCursoConsulta
    * @param pCursoRequisito
-   * @return 
+   * @return boolean, retorna false si no existe el correquisito
    */
   public boolean existeCorrequisito(Curso pCursoConsulta, Curso pCursoCorrequisito){
     PreparedStatement ps;

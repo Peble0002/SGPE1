@@ -7,16 +7,17 @@ import logicadenegocios.*;
 import java.sql.*;
 import javax.swing.JOptionPane;
 /**
- *
- * @author Pablo Luis Aarón 
+ * Abstracción de la clase CursoRequisitosBD
+ * @author Pablo Chaves, Aaron Soto y Luis Leitón 
+ * @version (24/10/2021)
  */
 public class CursoRequisitosBD {
   Conexion conexion = new Conexion();
   
   /**
-   * 
-   * @param pCurso
-   * @return 
+   * Método para consultar los requisitos de un curso
+   * @param pCurso de tipo curso
+   * @return ResultSet con la información del curso y sus requisitos
    */
   public ResultSet consultarRequisitos(Curso pCurso){
     PreparedStatement ps;
@@ -35,10 +36,10 @@ public class CursoRequisitosBD {
   }
   
   /**
-   * 
-   * @param pCursoConsulta
-   * @param pCursoRequisito
-   * @return 
+   * Método para verificar si existe un requisito asociado a un curso
+   * @param pCursoConsulta de tipo curso
+   * @param pCursoRequisito de tipo curso
+   * @return boolean, donde el false significa que no existe ese requisito
    */
   public boolean existeRequisito(Curso pCursoConsulta, Curso pCursoRequisito){
     PreparedStatement ps;
@@ -60,9 +61,9 @@ public class CursoRequisitosBD {
   }
   
   /**
-   * 
-   * @param pCursoConsulta
-   * @param pCursoRequisito 
+   * Método para eliminar un requisito de un curso
+   * @param pCursoConsulta de tipo curso
+   * @param pCursoRequisito de tipo curso
    */
   public void eliminarRequisito(Curso pCursoConsulta, Curso pCursoRequisito){
     try{
@@ -79,6 +80,11 @@ public class CursoRequisitosBD {
     }
   }
   
+  /**
+   * Método para registrar un requisito a un curso
+   * @param pCursoConsulta de tipo curso
+   * @param pCursoRequisito de tipo curso
+   */
   public void registrarRequisito(Curso pCursoConsulta, Curso pCursoRequisito){
     try{
       Connection con = conexion.getConexion();

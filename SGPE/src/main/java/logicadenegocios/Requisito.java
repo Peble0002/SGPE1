@@ -6,8 +6,9 @@
 package logicadenegocios;
 
 /**
- *
- * @author pablo luis aaron
+ * Abstracción de la clase Requisito
+ * @author Pablo Chaves, Aaron Soto y Luis Leitón 
+ * @version (24/10/2021)
  */
 public class Requisito {
   protected String idCursoConsultado;
@@ -15,43 +16,31 @@ public class Requisito {
   
 
   /**
-   * 
-   * @param pIdCursoConsultado
-   * @param pIdCursoRequisito 
+   * Constructor de la clase Requisito
+   * @param pIdCursoConsultado de tipo String
+   * @param pIdCursoRequisito de tipo String
    */
   public Requisito(String pIdCursoConsultado, String pIdCursoRequisito) {
     this.idCursoConsultado = pIdCursoConsultado;
     this.idCursoRequisito = pIdCursoRequisito;
   }
 
-  /**
-   * 
-   * @return 
-   */
+  
   public String getIdCursoConsultado() {
     return idCursoConsultado;
   }
 
-  /**
-   * 
-   * @param pIdCursoConsultado 
-   */
+ 
   public void setIdCursoConsultado(String pIdCursoConsultado) {
     this.idCursoConsultado = pIdCursoConsultado;
   }
 
-  /**
-   * 
-   * @return 
-   */
+  
   public String getIdCursoRequisito() {
     return idCursoRequisito;
   }
 
-  /**
-   * 
-   * @param pIdCursoRequisito 
-   */
+  
   public void setIdCursoRequisito(String pIdCursoRequisito) {
     this.idCursoRequisito = pIdCursoRequisito;
   }

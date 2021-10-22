@@ -8,15 +8,16 @@ import javax.swing.JOptionPane;
 import logicadenegocios.*;
 
 /**
- *
- * @author Pablo Luis Aarón
+ * Abstracción de la clase CursoPlanEstudioBD
+ * @author Pablo Chaves, Aaron Soto y Luis Leitón 
+ * @version (24/10/2021)
  */
 public class CursoPlanEstudioBD {
   Conexion conexion = new Conexion();
   
   /**
-   * 
-   * @param pCursoPlan 
+   * Método para insertar un curso a un plan de estudio
+   * @param pCursoPlan de tipo bloque
    */
   public void insertarCursoPlanEstudio(Bloque pCursoPlan){
     try{
@@ -34,8 +35,8 @@ public class CursoPlanEstudioBD {
   }
   
   /**
-   * 
-   * @param pBloque 
+   * Método para eliminar un curso de un plan de estudio
+   * @param pBloque de tipo Bloque
    */
   public void eliminarCursoPlan(Bloque pBloque){
     try{
@@ -52,9 +53,9 @@ public class CursoPlanEstudioBD {
   }
   
   /**
-   * 
-   * @param pCurso
-   * @return 
+   * Método para consultar plan de estudios con un curso en particular
+   * @param pCurso de tipo curso
+   * @return ResultSet con todos los datos del plan de estudio
    */
   public ResultSet consultarPlanesEstudioCurso(Curso pCurso){
     PreparedStatement ps;

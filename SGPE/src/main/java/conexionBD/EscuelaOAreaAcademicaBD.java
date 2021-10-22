@@ -10,8 +10,9 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author Pablo Luis Aarón 
+ * Abstracción de la clase EscuelaOAreaAcademicaBD
+ * @author Pablo Chaves, Aaron Soto y Luis Leitón 
+ * @version (24/10/2021)
  */
 public class EscuelaOAreaAcademicaBD {
   Conexion conexion = new Conexion();
@@ -21,8 +22,8 @@ public class EscuelaOAreaAcademicaBD {
   }
   
   /**
-   * 
-   * @param pEscuela 
+   * Método para insertar una escuela
+   * @param pEscuela de tipo EscuelaOAreaAcademica
    */
   public void insertarEscuela(EscuelaOAreaAcademica pEscuela){
     try{
@@ -39,8 +40,8 @@ public class EscuelaOAreaAcademicaBD {
   }
   
   /**
-   * 
-   * @return 
+   * Método para consultar escuelas 
+   * @return ResultSet con toda la información de las escuelas
    */
   public ResultSet consultarEscuelas(){
     PreparedStatement ps;
@@ -59,9 +60,9 @@ public class EscuelaOAreaAcademicaBD {
   }
   
   /**
-   * 
-   * @param pNombreEscuela
-   * @return 
+   * Método para obtener el código de la escuela
+   * @param pNombreEscuela de tipo String
+   * @return un string con el código de la escuela
    */
   public String obtenerCodigoEscuela(String pNombreEscuela){
     PreparedStatement ps;

@@ -2,8 +2,9 @@
 package logicadenegocios;
 
 /**
- *
- * @author pablo Luis Aaron
+  * Abstracción de la clase Correquisito
+  * @author Pablo Chaves, Aaron Soto y Luis Leitón 
+  * @version (24/10/2021)
  */
 public class Correquisito {
   protected String idCursoConsultado;
@@ -11,43 +12,31 @@ public class Correquisito {
   
 
   /**
-   * 
-   * @param pIdCursoConsultado
-   * @param pIdCursoRequisito 
-   */
+   * Constructor de la clase 
+   * @param pIdCursoConsultado de tipo String
+   * @param pIdCursoCorrequisito de tipo String
+  */
   public Correquisito(String pIdCursoConsultado, String pIdCursoCorrequisito) {
     this.idCursoConsultado = pIdCursoConsultado;
     this.idCursoCorrequisito = pIdCursoCorrequisito;
   }
 
-  /**
-   * 
-   * @return 
-   */
+  
   public String getIdCursoConsultado() {
     return idCursoConsultado;
   }
 
-  /**
-   * 
-   * @param pIdCursoConsultado 
-   */
+  
   public void setIdCursoConsultado(String pIdCursoConsultado) {
     this.idCursoConsultado = pIdCursoConsultado;
   }
 
-  /**
-   * 
-   * @return 
-   */
+  
   public String getIdCursoRequisito() {
     return idCursoCorrequisito;
   }
 
-  /**
-   * 
-   * @param pIdCursoRequisito 
-   */
+  
   public void setIdCursoRequisito(String pIdCursoCorrequisito) {
     this.idCursoCorrequisito = pIdCursoCorrequisito;
   }

@@ -9,8 +9,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
- *
- * @author pablo luis aaron
+ * Abstracción de la clase PlanDeEstudio
+ * @author Pablo Chaves, Aaron Soto y Luis Leitón 
+ * @version (24/10/2021)
  */
 public class PlanDeEstudio {
   private EscuelaOAreaAcademica escuela;
@@ -20,10 +21,10 @@ public class PlanDeEstudio {
   private ArrayList<PlandeEscuela> planes;
 
   /**
-   * 
-   * @param pEscuela
-   * @param pNumPlan
-   * @param pFechaEntradaVigencia 
+   * Constructor de la clase PlanDeEstudio
+   * @param pEscuela de tipo EscuelaOAreaAcademica
+   * @param pNumPlan de tipo String
+   * @param pFechaEntradaVigencia de tipo LocalDate
    */
   public PlanDeEstudio(EscuelaOAreaAcademica pEscuela, String pNumPlan, 
           LocalDate pFechaEntradaVigencia) {
@@ -33,12 +34,12 @@ public class PlanDeEstudio {
   }
   
   /**
-   * 
-   * @param pEscuela
-   * @param pNumPlan
-   * @param pDia
-   * @param pMes
-   * @param pAno 
+   * Constructor de la clase PlanDeEstudio
+   * @param pEscuela de tipo EscuelaOAreaAcademica
+   * @param pNumPlan de tipo String
+   * @param pDia de tipo int
+   * @param pMes de tipo int
+   * @param pAno de tipo int
    */
   public PlanDeEstudio(EscuelaOAreaAcademica pEscuela, String pNumPlan, 
           int pDia, int pMes, int pAno) {
@@ -47,59 +48,39 @@ public class PlanDeEstudio {
     this.fechaEntradaVigencia = LocalDate.of(pAno, pMes, pDia);
   }
 
-  /**
-   * 
-   * @return 
-   */
+  
   public EscuelaOAreaAcademica getEscuela() {
     return escuela;
   }
 
-  /**
-   * 
-   * @param pEscuela 
-   */
+ 
   public void setEscuela(EscuelaOAreaAcademica pEscuela) {
     this.escuela = pEscuela;
   }
 
-  /**
-   * 
-   * @return 
-   */
+  
   public String getNumPlan() {
     return numPlan;
   }
 
-  /**
-   * 
-   * @param pNumPlan 
-   */
+  
   public void setNumPlan(String pNumPlan) {
     this.numPlan = pNumPlan;
   }
 
-  /**
-   * 
-   * @return 
-   */
+  
   public LocalDate getFechaEntradaVigencia() {
     return fechaEntradaVigencia;
   }
 
-  /**
-   * 
-   * @param pDia
-   * @param pMes
-   * @param pAno 
-   */
+  
   public void setFechaEntradaVigencia(int pDia, int pMes, int pAno) {
     this.fechaEntradaVigencia = LocalDate.of(pAno, pMes, pDia);
   }
 
   /**
-   * 
-   * @param pCurso 
+   * Método para agregar cursos
+   * @param pIdCurso de tipo String 
    */
   private void agregarCurso(String pIdCurso){
     for (String id: cursos){
@@ -111,34 +92,22 @@ public class PlanDeEstudio {
     
   }
 
-  /**
-   * 
-   * @return 
-   */
+  
   public ArrayList<String> getCursos() {
     return cursos;
   }
 
-  /**
-   * 
-   * @param pCursos 
-   */
+ 
   public void setCursos(ArrayList<String> pCursos) {
     this.cursos = pCursos;
   }
 
-  /**
-   * 
-   * @return 
-   */
+  
   public ArrayList<PlandeEscuela> getPlanes() {
     return planes;
   }
 
-  /**
-   * 
-   * @param pPlanes 
-   */
+ 
   public void setPlanes(ArrayList<PlandeEscuela> pPlanes) {
     this.planes = pPlanes;
   }
