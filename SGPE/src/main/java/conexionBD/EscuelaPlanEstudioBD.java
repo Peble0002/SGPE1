@@ -62,4 +62,22 @@ public class EscuelaPlanEstudioBD {
       return null;
     }
   }
+  
+  /**
+   * Método para insertar un plan de estudios
+   * @param pPlanEscuela de tipo PlanDeEstudio
+   */
+  public void insertarEscuelaPlan(PlandeEscuela pPlanEscuela){
+    try{
+      Connection con = conexion.getConexion();
+      PreparedStatement ps = con.prepareStatement("INSERT INTO Escuela_PlanEs" +
+              "tudio (IDEscuela, NumeroPlan) VALUES (?,?)");
+      ps.setString(1, pPlanEscuela.getIdEscuela());
+      ps.setString(2, pPlanEscuela.getNumPlan());
+      ps.executeUpdate();
+      JOptionPane.showMessageDialog(null, "Registro guardado.");
+    }catch(SQLException e){
+      JOptionPane.showMessageDialog(null, e.toString());
+    }
+  }
 }

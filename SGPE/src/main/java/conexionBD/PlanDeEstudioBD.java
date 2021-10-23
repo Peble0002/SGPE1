@@ -90,13 +90,34 @@ public class PlanDeEstudioBD {
       PreparedStatement ps = con.prepareStatement("INSERT INTO PlanEstudio "
               + "(NumeroPlan, FechaEntradaVigencia) VALUES (?,?)");
       ps.setString(1, pPlan.getNumPlan());
-      DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd LLLL yyyy");
+      DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy mm dd");
       String formattedString = pPlan.getNumPlan().formatted(formatter);
       ps.setString(2, formattedString);
       ps.executeUpdate();
       JOptionPane.showMessageDialog(null, "Registro guardado.");
     }catch(SQLException e){
       JOptionPane.showMessageDialog(null, e.toString());
+    }
+  }
+  
+  /**
+   * Método para verificar si existe un curso en la base de datos
+   * @param pPlanEstudio de tipo curso
+   * @return un boolean, retorna false si no existe
+   */
+  public boolean existePlanEstudio(PlanDeEstudio pPlanEstudio){
+    ResultSet rs;
+    try{
+      Connection con = conexion.getConexion();
+      PreparedStatement ps = con.prepareStatement("SELECT * FROM PlanEstudio "
+              + "WHERE PlanEstudio.NumeroPlan = '" + pPlanEstudio.getNumPlan()
+              + "'");
+      rs = ps.executeQuery();
+      JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
+      return rs.next();
+    }catch(SQLException e){
+      JOptionPane.showMessageDialog(null, e.toString());
+      return false;
     }
   }
   

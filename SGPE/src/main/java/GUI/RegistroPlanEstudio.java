@@ -4,14 +4,12 @@
  */
 package GUI;
 
-import conexionBD.EscuelaOAreaAcademicaBD;
-import conexionBD.PlanDeEstudioBD;
+import conexionBD.*;
+import logicadenegocios.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import javax.swing.JOptionPane;
-import logicadenegocios.EscuelaOAreaAcademica;
-import logicadenegocios.PlanDeEstudio;
 
 /**
  *
@@ -19,7 +17,8 @@ import logicadenegocios.PlanDeEstudio;
  */
 public class RegistroPlanEstudio extends javax.swing.JFrame {
   EscuelaOAreaAcademicaBD conexionEscuela = new EscuelaOAreaAcademicaBD();
-  PlanDeEstudioBD conexionplan = new PlanDeEstudioBD();
+  PlanDeEstudioBD conexionPlan = new PlanDeEstudioBD();
+  EscuelaPlanEstudioBD conexionPlanEscuela = new EscuelaPlanEstudioBD();
   
     /**
      * Creates new form RegistroPlanEstudio
@@ -30,11 +29,12 @@ public class RegistroPlanEstudio extends javax.swing.JFrame {
     }
     
     private void cargarComboBoxEscuelas(){
-      ResultSet rs = conexionEscuela .consultarEscuelas();
+      ResultSet rs = conexionEscuela.consultarEscuelas();
       
       try{
         while(rs.next()){
-          cbEscuelaPropietaria.addItem(rs.getString("Nombre"));
+          cbEscuelaPropietaria.addItem(rs.getString("IDEscuela") + " - " + 
+                  rs.getString("Nombre"));
         }
       }catch(SQLException e){
         JOptionPane.showMessageDialog(null, e.toString());
@@ -59,7 +59,7 @@ public class RegistroPlanEstudio extends javax.swing.JFrame {
     jLabel7 = new javax.swing.JLabel();
     jLabel2 = new javax.swing.JLabel();
     jLabel4 = new javax.swing.JLabel();
-    tbCodigoCurso = new javax.swing.JTextField();
+    tbCodigoPlan = new javax.swing.JTextField();
     tbVigenciaPlan = new javax.swing.JTextField();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -94,9 +94,9 @@ public class RegistroPlanEstudio extends javax.swing.JFrame {
     jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
     jLabel4.setText("Código del plan de estudio: ");
 
-    tbCodigoCurso.addActionListener(new java.awt.event.ActionListener() {
+    tbCodigoPlan.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        tbCodigoCursoActionPerformed(evt);
+        tbCodigoPlanActionPerformed(evt);
       }
     });
 
@@ -120,18 +120,19 @@ public class RegistroPlanEstudio extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addComponent(jLabel6)
                   .addComponent(jLabel4))
-                .addGap(74, 74, 74)
+                .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                  .addComponent(tbVigenciaPlan, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
-                  .addComponent(tbCodigoCurso)))
+                  .addComponent(tbCodigoPlan, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
+                  .addComponent(tbVigenciaPlan))
+                .addGap(33, 33, 33))
               .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel2)
-                .addGap(74, 74, 74)
-                .addComponent(cbEscuelaPropietaria, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addComponent(cbEscuelaPropietaria, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE))))
           .addGroup(layout.createSequentialGroup()
             .addGap(215, 215, 215)
             .addComponent(jLabel1)))
-        .addContainerGap(198, Short.MAX_VALUE))
+        .addGap(30, 30, 30))
       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
         .addGap(0, 0, Short.MAX_VALUE)
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,17 +151,17 @@ public class RegistroPlanEstudio extends javax.swing.JFrame {
         .addContainerGap()
         .addComponent(jLabel1)
         .addGap(31, 31, 31)
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabel2)
           .addComponent(cbEscuelaPropietaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addGap(39, 39, 39)
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(36, 36, 36)
+        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabel4)
-          .addComponent(tbCodigoCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addGap(43, 43, 43)
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addComponent(jLabel6)
-          .addComponent(tbVigenciaPlan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(tbCodigoPlan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addGap(41, 41, 41)
+        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+          .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(tbVigenciaPlan))
         .addGap(41, 41, 41)
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(btnRegistrarPlanEstudios)
@@ -177,9 +178,9 @@ public class RegistroPlanEstudio extends javax.swing.JFrame {
    * 
    * @param evt 
    */
-    private void tbCodigoCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbCodigoCursoActionPerformed
+    private void tbCodigoPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbCodigoPlanActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tbCodigoCursoActionPerformed
+    }//GEN-LAST:event_tbCodigoPlanActionPerformed
 
     /**
      * 
@@ -200,21 +201,44 @@ public class RegistroPlanEstudio extends javax.swing.JFrame {
       this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
+  private boolean validarFecha(int ano, int mes, int dia) throws java.time.DateTimeException{
+    try{
+      LocalDate.of(ano, mes, dia);
+      return true;
+    }catch(java.time.DateTimeException e){
+      return false;
+    }
+  }
+    
   private void btnRegistrarPlanEstudiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarPlanEstudiosActionPerformed
-    EscuelaOAreaAcademica escuela = new EscuelaOAreaAcademica(cbEscuelaPropietaria.getName());
-    String numPlan = tbCodigoCurso.getName();
-    String info = (String) cbEscuelaPropietaria.getSelectedItem();
-    //String escuela = info.substring(0, info.indexOf("-")-1);
-    String ano = info.substring(info.charAt(0), info.indexOf("/")-1);
-    int anos = ano.indexOf(ano);
+    String infoEscuela = (String) cbEscuelaPropietaria.getSelectedItem();
+    String codigoEscuela = infoEscuela.substring(0, infoEscuela.indexOf("-")-1);
+    String nombreEscuela = infoEscuela.substring(infoEscuela.indexOf("-")+2, infoEscuela.length());
+    EscuelaOAreaAcademica escuela = new EscuelaOAreaAcademica(nombreEscuela, codigoEscuela);
+    String numPlan = tbCodigoPlan.getText();    
+    String info = tbVigenciaPlan.getText();
+    String ano = info.substring(0, info.indexOf("/"));
+    int anos = Integer.parseInt((ano));
     String me = info.substring(info.indexOf("/")+1, info.indexOf("/")+3);
-    int mes = me.indexOf(me);
-    String dia = info.substring(info.indexOf("/")+4, info.lastIndexOf(info));
-    int dias = dia.indexOf(dia);
-    LocalDate fechaEntradaVigencia = LocalDate.of(anos,mes,dias);
-    PlanDeEstudio plan = new PlanDeEstudio(escuela,numPlan,fechaEntradaVigencia );
-    conexionplan.insertarPlan(plan);
-
+    int mes = Integer.parseInt((me));
+    String dia = info.substring(info.indexOf("/")+4, info.length());
+    int dias = Integer.parseInt((dia));
+    if(validarFecha(anos, mes, dias)){
+      JOptionPane.showMessageDialog(null, "La fecha ingresada no es válida. "
+              + "Po favor vuelva a intentar ingresa la fecha.");
+      return;
+    }
+    LocalDate fechaEntradaVigencia = LocalDate.of(anos, mes, dias);
+    PlanDeEstudio plan = new PlanDeEstudio(escuela,numPlan,fechaEntradaVigencia);
+    PlandeEscuela planEscuela = new PlandeEscuela(codigoEscuela, numPlan);
+    
+    if(conexionPlan.existePlanEstudio(plan)){
+      JOptionPane.showMessageDialog(null, "Ya existe un plan con el código " +
+              "ingresado. Por favor ingrese un código diferente.");
+    }else{
+      conexionPlan.insertarPlan(plan);
+      conexionPlanEscuela.insertarEscuelaPlan(planEscuela);
+    }
   }//GEN-LAST:event_btnRegistrarPlanEstudiosActionPerformed
 
     /**
@@ -261,7 +285,7 @@ public class RegistroPlanEstudio extends javax.swing.JFrame {
   private javax.swing.JLabel jLabel4;
   private javax.swing.JLabel jLabel6;
   private javax.swing.JLabel jLabel7;
-  private javax.swing.JTextField tbCodigoCurso;
+  private javax.swing.JTextField tbCodigoPlan;
   private javax.swing.JTextField tbVigenciaPlan;
   // End of variables declaration//GEN-END:variables
 }

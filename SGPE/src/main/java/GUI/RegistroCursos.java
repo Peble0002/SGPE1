@@ -99,7 +99,7 @@ public class RegistroCursos extends javax.swing.JFrame {
     layout.setHorizontalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addContainerGap(145, Short.MAX_VALUE)
         .addComponent(jLabel1)
         .addGap(202, 202, 202))
       .addGroup(layout.createSequentialGroup()
@@ -110,31 +110,32 @@ public class RegistroCursos extends javax.swing.JFrame {
               .addComponent(jLabel4)
               .addComponent(jLabel6)
               .addComponent(jLabel5)))
-          .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-            .addComponent(btnLimpiarCampos)
-            .addGroup(layout.createSequentialGroup()
-              .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                  .addContainerGap()
-                  .addComponent(jLabel2))
-                .addGroup(layout.createSequentialGroup()
-                  .addContainerGap()
-                  .addComponent(jLabel3))
-                .addGroup(layout.createSequentialGroup()
-                  .addGap(99, 99, 99)
-                  .addComponent(btnRegistrar)))
-              .addGap(18, 18, 18)
-              .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(cbEscuelaPropietaria, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(tbNombreCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                  .addComponent(cbHorasLectivas, javax.swing.GroupLayout.Alignment.LEADING, 0, 100, Short.MAX_VALUE)
-                  .addComponent(cbCreditos, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                  .addComponent(tbCodigoCurso, javax.swing.GroupLayout.Alignment.LEADING)))))
+          .addComponent(btnLimpiarCampos, javax.swing.GroupLayout.Alignment.TRAILING)
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2))
+              .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3))
+              .addGroup(layout.createSequentialGroup()
+                .addGap(99, 99, 99)
+                .addComponent(btnRegistrar)))
+            .addGap(18, 18, 18)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addComponent(cbEscuelaPropietaria, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+              .addComponent(tbNombreCurso)
+              .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(tbCodigoCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(cbCreditos, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(cbHorasLectivas, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))))
           .addGroup(layout.createSequentialGroup()
             .addGap(228, 228, 228)
             .addComponent(btnRegresar)))
-        .addContainerGap(68, Short.MAX_VALUE))
+        .addContainerGap())
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,21 +150,21 @@ public class RegistroCursos extends javax.swing.JFrame {
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabel3)
           .addComponent(tbNombreCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+        .addGap(31, 31, 31)
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabel4)
           .addComponent(tbCodigoCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(23, 23, 23)
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabel6)
-          .addComponent(cbCreditos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(cbCreditos, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(18, 18, 18)
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addGroup(layout.createSequentialGroup()
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-              .addComponent(jLabel5)
-              .addComponent(cbHorasLectivas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+          .addComponent(jLabel5)
+          .addComponent(cbHorasLectivas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
             .addComponent(btnRegresar)
             .addContainerGap())
           .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -196,18 +197,24 @@ public class RegistroCursos extends javax.swing.JFrame {
     String codigo = tbCodigoCurso.getText();
     int creditos = Integer.parseInt((String)cbCreditos.getSelectedItem());
     int horasLectivas = Integer.parseInt((String)cbHorasLectivas.getSelectedItem());
-    
     Curso curso = new Curso(nombre, codigo, creditos, horasLectivas);
-    conexionCurso.insertarCurso(curso);
+    
+    if(conexionCurso.existeCurso(curso)){
+      JOptionPane.showMessageDialog(null, "El código de curso ingresado ya " 
+              + "existe. Por favor ingresar uno diferente.");
+    }else{
+      conexionCurso.insertarCurso(curso);
+    }
   }//GEN-LAST:event_btnRegistrarActionPerformed
 
   
     private void cargarComboBox(){
-      ResultSet rs = conexionEscuela .consultarEscuelas();
+      ResultSet rs = conexionEscuela.consultarEscuelas();
       
       try{
         while(rs.next()){
-          cbEscuelaPropietaria.addItem(rs.getString("Nombre"));
+          cbEscuelaPropietaria.addItem(rs.getString("IDEscuela") + " - " + 
+                  rs.getString("Nombre"));
         }
       }catch(SQLException e){
         JOptionPane.showMessageDialog(null, e.toString());

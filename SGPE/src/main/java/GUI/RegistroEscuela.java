@@ -147,7 +147,12 @@ public class RegistroEscuela extends javax.swing.JFrame {
     
     EscuelaOAreaAcademica escuela = new EscuelaOAreaAcademica(nombre, codigo);
     
-    conexion.insertarEscuela(escuela);
+    if(conexion.existeEscuela(escuela)){
+      JOptionPane.showMessageDialog(null, "El código de escuela ingresado ya "
+              + "existe. Por favor ingrese uno diferente.");
+    }else{
+      conexion.insertarEscuela(escuela);
+    }
   }//GEN-LAST:event_btnRegistrarEscuelaActionPerformed
 
     /**

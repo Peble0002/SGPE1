@@ -80,4 +80,21 @@ public class EscuelaOAreaAcademicaBD {
       return null;
     }
   }
+  
+  public boolean existeEscuela(EscuelaOAreaAcademica pEscuela){
+    PreparedStatement ps;
+    ResultSet rs;
+    
+    try{
+      Connection con = conexion.getConexion();
+      ps = con.prepareStatement("SELECT * FROM EscuelaOArea WHERE IDEscuela = '"
+              + pEscuela.getCodigo() + "'");
+      rs = ps.executeQuery();
+      JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
+      return rs.next();
+    }catch(SQLException e){
+      JOptionPane.showMessageDialog(null, e.toString());
+      return false;
+    }
+  }
 }
