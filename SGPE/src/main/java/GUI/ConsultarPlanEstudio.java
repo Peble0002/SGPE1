@@ -67,7 +67,9 @@ public class ConsultarPlanEstudio extends javax.swing.JFrame {
       }
     }
     
-    
+    /**
+     * carga el combobox
+     */
     private void cargarComboBoxEscuelas(){
       //ResultSet rs = conexionEscuela.consultarEscuelas();
       ResultSet rs = conexionPlanEscuela.consultarEscuelaPlan();
@@ -218,7 +220,7 @@ public class ConsultarPlanEstudio extends javax.swing.JFrame {
 
     /**
      * 
-     * @param evt 
+     * @param evt evento
      */
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
       Principal nPrincipal = new Principal();
@@ -229,7 +231,7 @@ public class ConsultarPlanEstudio extends javax.swing.JFrame {
 
     /**
      * 
-     * @param evt 
+     * @param evt evento
      */
   private void btnRealizarBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarBusquedaActionPerformed
     try {

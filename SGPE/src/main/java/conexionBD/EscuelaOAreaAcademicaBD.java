@@ -80,7 +80,11 @@ public class EscuelaOAreaAcademicaBD {
       return null;
     }
   }
-  
+  /**
+   * 
+   * @param pEscuela escuela que se consulta si existe
+   * @return si existe o no la escuela
+   */
   public boolean existeEscuela(EscuelaOAreaAcademica pEscuela){
     PreparedStatement ps;
     ResultSet rs;

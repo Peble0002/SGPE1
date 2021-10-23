@@ -48,32 +48,53 @@ public class PlanDeEstudio {
     this.fechaEntradaVigencia = LocalDate.of(pAno, pMes, pDia);
   }
 
-  
+  /**
+   * 
+   * @return escuela del plan de estudio
+   */
   public EscuelaOAreaAcademica getEscuela() {
     return escuela;
   }
 
  
+  /**
+   * 
+   * @param pEscuela escuela del plan de estudio
+   */
   public void setEscuela(EscuelaOAreaAcademica pEscuela) {
     this.escuela = pEscuela;
   }
 
-  
+  /**
+   * 
+   * @return numero de plan de estudio
+   */
   public String getNumPlan() {
     return numPlan;
   }
 
-  
+  /**
+   * 
+   * @param pNumPlan numero de plan de estudio
+   */
   public void setNumPlan(String pNumPlan) {
     this.numPlan = pNumPlan;
   }
 
-  
+  /**
+   * 
+   * @return fecha de vigencia
+   */
   public LocalDate getFechaEntradaVigencia() {
     return fechaEntradaVigencia;
   }
 
-  
+  /**
+   * 
+   * @param pDia día de vigencia
+   * @param pMes mees de vigencia
+   * @param pAno año de vigencia
+   */
   public void setFechaEntradaVigencia(int pDia, int pMes, int pAno) {
     this.fechaEntradaVigencia = LocalDate.of(pAno, pMes, pDia);
   }
@@ -92,22 +113,34 @@ public class PlanDeEstudio {
     
   }
 
-  
+  /**
+   * 
+   * @return cursos
+   */
   public ArrayList<String> getCursos() {
     return cursos;
   }
 
- 
+ /**
+  * 
+  * @param pCursos asigna cursos
+  */
   public void setCursos(ArrayList<String> pCursos) {
     this.cursos = pCursos;
   }
 
-  
+  /**
+   * 
+   * @return plan de estudio
+   */
   public ArrayList<PlandeEscuela> getPlanes() {
     return planes;
   }
 
- 
+ /**
+  * 
+  * @param pPlanes asigna plan de estudio
+  */
   public void setPlanes(ArrayList<PlandeEscuela> pPlanes) {
     this.planes = pPlanes;
   }

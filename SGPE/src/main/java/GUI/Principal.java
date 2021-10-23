@@ -288,7 +288,7 @@ public class Principal extends javax.swing.JFrame{
 
     /**
      * 
-     * @param evt 
+     * @param evt evento
      */
     private void btnIrRegistroEscuelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrRegistroEscuelaActionPerformed
 
@@ -300,7 +300,7 @@ public class Principal extends javax.swing.JFrame{
 
     /**
      * 
-     * @param evt 
+     * @param evt evento
      */
     private void btnIrRegistroCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrRegistroCursoActionPerformed
       RegistroCursos RC = new RegistroCursos();
@@ -311,7 +311,7 @@ public class Principal extends javax.swing.JFrame{
 
     /**
      * 
-     * @param evt 
+     * @param evt evento
      */
     private void btnIrRegistroCoYRequisitosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrRegistroCoYRequisitosActionPerformed
       RegistroCoYRequisitos RCR = new RegistroCoYRequisitos();
@@ -322,7 +322,7 @@ public class Principal extends javax.swing.JFrame{
 
     /**
      * 
-     * @param evt 
+     * @param evt evento
      */
     private void btnIrCrearPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrCrearPlanActionPerformed
       RegistroPlanEstudio RPE = new RegistroPlanEstudio();
@@ -333,7 +333,7 @@ public class Principal extends javax.swing.JFrame{
 
     /**
      * 
-     * @param evt 
+     * @param evt evento
      */
     private void btnIrConsultarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrConsultarPlanActionPerformed
       ConsultarPlanEstudio CPE = new ConsultarPlanEstudio();
@@ -344,7 +344,7 @@ public class Principal extends javax.swing.JFrame{
 
     /**
      * 
-     * @param evt 
+     * @param evt evento
      */
     private void btnIrConsultarPlanConCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrConsultarPlanConCursoActionPerformed
       ConsultarCursoPlanEstudio CEPE = new ConsultarCursoPlanEstudio();
@@ -354,7 +354,7 @@ public class Principal extends javax.swing.JFrame{
 
     /**
      * 
-     * @param evt 
+     * @param evt evento
      */
     private void btnIrConsultarRequisitosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrConsultarRequisitosActionPerformed
       ConsultarRequisitosCurso CRC = new ConsultarRequisitosCurso();
@@ -364,7 +364,7 @@ public class Principal extends javax.swing.JFrame{
 
     /**
      * 
-     * @param evt 
+     * @param evt evento
      */
     private void btnIrConsultarCorrequisitosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrConsultarCorrequisitosActionPerformed
       ConsultarCorrequisitosCurso CCC = new ConsultarCorrequisitosCurso();
@@ -374,7 +374,7 @@ public class Principal extends javax.swing.JFrame{
 
     /**
      * 
-     * @param evt 
+     * @param evt evento
      */
     
     private void btnIrEliminarRequisitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrEliminarRequisitoActionPerformed
@@ -385,7 +385,7 @@ public class Principal extends javax.swing.JFrame{
 
     /**
      * 
-     * @param evt 
+     * @param evt evento
      */
     private void btnIrEliminarCursoPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrEliminarCursoPlanActionPerformed
       EliminarCursoPlanEstudios ECPE = new EliminarCursoPlanEstudios();
@@ -395,7 +395,7 @@ public class Principal extends javax.swing.JFrame{
 
     /**
      * 
-     * @param evt 
+     * @param evt evento
      */
     private void btnIrEliminarCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrEliminarCursoActionPerformed
       EliminarCurso EC = new EliminarCurso();
@@ -405,7 +405,7 @@ public class Principal extends javax.swing.JFrame{
 
     /**
      * 
-     * @param evt 
+     * @param evt evento
      */
     private void btnIrAgregarCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrAgregarCursoActionPerformed
       RegistroCursoPlanEstudio RCPE = new RegistroCursoPlanEstudio();

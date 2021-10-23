@@ -176,7 +176,7 @@ public class RegistroPlanEstudio extends javax.swing.JFrame {
 
   /**
    * 
-   * @param evt 
+   * @param evt evento
    */
     private void tbCodigoPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbCodigoPlanActionPerformed
         // TODO add your handling code here:
@@ -184,7 +184,7 @@ public class RegistroPlanEstudio extends javax.swing.JFrame {
 
     /**
      * 
-     * @param evt 
+     * @param evt evento
      */
     private void tbVigenciaPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbVigenciaPlanActionPerformed
         // TODO add your handling code here:
@@ -192,7 +192,7 @@ public class RegistroPlanEstudio extends javax.swing.JFrame {
 
     /**
      * 
-     * @param evt 
+     * @param evt evento
      */
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
       Principal nPrincipal = new Principal();
@@ -201,6 +201,14 @@ public class RegistroPlanEstudio extends javax.swing.JFrame {
       this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
+  /**
+   * 
+   * @param ano año
+   * @param mes mes
+   * @param dia día
+   * @return si la fecha es valida
+   * @throws java.time.DateTimeException excepcion de datetime
+   */
   private boolean validarFecha(int ano, int mes, int dia) throws java.time.DateTimeException{
     try{
       LocalDate.of(ano, mes, dia);
@@ -209,7 +217,10 @@ public class RegistroPlanEstudio extends javax.swing.JFrame {
       return false;
     }
   }
-    
+  /**
+   * 
+   * @param evt evento
+   */  
   private void btnRegistrarPlanEstudiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarPlanEstudiosActionPerformed
     String infoEscuela = (String) cbEscuelaPropietaria.getSelectedItem();
     String codigoEscuela = infoEscuela.substring(0, infoEscuela.indexOf("-")-1);

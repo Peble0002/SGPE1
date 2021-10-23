@@ -86,8 +86,8 @@ public class CursoCorrequisitosBD {
   
   /**
    * Método para registrar los correquisitos de un curso
-   * @param pCursoConsulta
-   * @param pCursoCorrequisito 
+   * @param pCursoConsulta Curso que se consulta
+   * @param pCursoCorrequisito correquisitos del curso 
    */
   public void registrarCorrequisito(Curso pCursoConsulta, Curso pCursoCorrequisito){
     try{
@@ -105,8 +105,8 @@ public class CursoCorrequisitosBD {
   
   /**
    * Método para verificar si existe un correquisito de un curso
-   * @param pCursoConsulta
-   * @param pCursoRequisito
+   * @param pCursoConsulta Curso que se consulta
+   * @param pCursoCorrequisito correquisitos del curso
    * @return boolean, retorna false si no existe el correquisito
    */
   public boolean existeCorrequisito(Curso pCursoConsulta, Curso pCursoCorrequisito){

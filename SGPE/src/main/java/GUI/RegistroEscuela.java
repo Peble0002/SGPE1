@@ -128,7 +128,7 @@ public class RegistroEscuela extends javax.swing.JFrame {
 
   /**
    * 
-   * @param evt 
+   * @param evt evento
    */
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
       Principal nPrincipal = new Principal();
@@ -139,7 +139,7 @@ public class RegistroEscuela extends javax.swing.JFrame {
 
     /**
      * 
-     * @param evt 
+     * @param evt evento
      */
   private void btnRegistrarEscuelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarEscuelaActionPerformed
     String nombre = tbNombre.getText();

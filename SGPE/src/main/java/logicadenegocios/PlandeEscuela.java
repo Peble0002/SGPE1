@@ -24,22 +24,34 @@ public class PlandeEscuela {
    this.numPlan = pNumPlan;
  }
 
- 
+ /**
+  * 
+  * @return el id de la escuela
+  */
  public String getIdEscuela() {
    return idEscuela;
   }
 
- 
+ /**
+  * 
+  * @param pIdEscuela asigan el id de la escuela
+  */
  public void setIdEscuela(String pIdEscuela) {
    this.idEscuela = pIdEscuela;
   }
 
-  
+  /**
+   * 
+   * @return Numero de plan
+   */
   public String getNumPlan() {
     return numPlan;
   }
 
-  
+  /**
+   * 
+   * @param pNumPlan Numero de plan
+   */
   public void setNumPlan(String pNumPlan) {
     this.numPlan = pNumPlan;
   }

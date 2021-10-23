@@ -124,6 +124,10 @@ public class EliminarRequisitoCurso extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
+  /**
+   * 
+   * @param evt evento
+   */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
       Principal nPrincipal = new Principal();
       nPrincipal.setVisible(true);
@@ -133,7 +137,7 @@ public class EliminarRequisitoCurso extends javax.swing.JFrame {
 
   /**
    * 
-   * @param evt 
+   * @param evt evento
    */
   private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     Curso cursoConsulta = new Curso(tbCursoConsulta.getText());

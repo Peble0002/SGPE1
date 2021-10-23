@@ -25,22 +25,35 @@ public class Requisito {
     this.idCursoRequisito = pIdCursoRequisito;
   }
 
-  
+  /**
+   * 
+   * @return el id del curso consultado
+   */
   public String getIdCursoConsultado() {
     return idCursoConsultado;
   }
 
  
+  /**
+   * 
+   * @param pIdCursoConsultado el id del curso consultado
+   */
   public void setIdCursoConsultado(String pIdCursoConsultado) {
     this.idCursoConsultado = pIdCursoConsultado;
   }
 
-  
+  /**
+   * 
+   * @return el id del curso requisito
+   */
   public String getIdCursoRequisito() {
     return idCursoRequisito;
   }
 
-  
+  /**
+   * 
+   * @param pIdCursoRequisito el id del curso requisito
+   */
   public void setIdCursoRequisito(String pIdCursoRequisito) {
     this.idCursoRequisito = pIdCursoRequisito;
   }

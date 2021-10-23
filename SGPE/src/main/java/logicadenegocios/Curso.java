@@ -44,42 +44,68 @@ public class Curso {
     this.idCursos = pIdCursos;
   }
 
-  
+  /**
+   * 
+   * @return nombre del curso
+   */
   public String getNombre() {
     return nombre;
   }
 
 
+  /**
+   * 
+   * @param pNombre asigna el nombre del curso
+   */
   public void setNombre(String pNombre) {
     this.nombre = pNombre;
   }
 
-  
+  /**
+   * 
+   * @return id del curso
+   */
   public String getIdCursos() {
     return idCursos;
   }
 
-  
+
+  /**
+   * 
+   * @param pIdCursos asigna el id del curso
+   */
   public void setIdCursos(String pIdCursos) {
     this.idCursos = pIdCursos;
   }
 
-  
+  /**
+   * 
+   * @return cantidad de creditos
+   */
   public int getCreditos() {
     return creditos;
   }
 
-  
+  /**
+   * 
+   * @param pCreditos asigna la cantidad de creditos
+   */
   public void setCreditos(int pCreditos) {
     this.creditos = pCreditos;
   }
 
-  
+  /**
+   * 
+   * @return las horas lectivas
+   */
   public int getHorasLectivas() {
     return horasLectivas;
   }
 
-  
+  /**
+   * 
+   * @param pHorasLectivas asigna las horas lectivas
+   */
   public void setHorasLectivas(int pHorasLectivas) {
     this.horasLectivas = pHorasLectivas;
   }
@@ -100,32 +126,50 @@ public class Curso {
     correquisitos= new ArrayList<Correquisito>();
   }
 
-  
+  /**
+   * 
+   * @return los requisitos 
+   */
   public ArrayList<Requisito> getRequisitos() {
     return requisitos;
   }
 
- 
+ /**
+  * 
+  * @param pRequisitos asigna los requisitos 
+  */
   public void setRequisitos(ArrayList<Requisito> pRequisitos) {
     this.requisitos = pRequisitos;
   }
 
-  
+  /**
+   * 
+   * @return los correquisitos
+   */
   public ArrayList<Correquisito> getCorrequisitos() {
     return correquisitos;
   }
 
-  
+  /**
+   * 
+   * @param pCorrequisitos asigna los correquisitos 
+   */
   public void setCorrequisitos(ArrayList<Correquisito> pCorrequisitos) {
     this.correquisitos = pCorrequisitos;
   }
 
-
+  /**
+   * 
+   * @return bloque
+   */
   public Bloque getBloque() {
     return bloque;
   }
 
-  
+  /**
+   * 
+   * @param bloque asigna bloque
+   */
   public void setBloque(Bloque bloque) {
     this.bloque = bloque;
   }

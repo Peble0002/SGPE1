@@ -104,7 +104,7 @@ public class EliminarCurso extends javax.swing.JFrame {
 
     /**
      * 
-     * @param evt 
+     * @param evt evento
      */
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
       Principal nPrincipal = new Principal();
@@ -113,6 +113,10 @@ public class EliminarCurso extends javax.swing.JFrame {
       this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
+    /**
+     * 
+     * @param evt evento
+     */
   private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     Curso cursoEliminar = new Curso(tbCodigoCurso.getText());
     

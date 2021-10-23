@@ -56,47 +56,75 @@ public class EscuelaOAreaAcademica {
     this.planesEstudio = new ArrayList<PlanDeEstudio>();
   }
 
-  
+  /**
+   * 
+   * @return nombre de la escuela
+   */
   public String getNombre() {
     return nombre;
   }
 
-  
+  /**
+   * 
+   * @param pNombre  nombre de la escuela
+   */
   public void setNombre(String pNombre) {
     this.nombre = pNombre;
   }
 
-  
+  /**
+   * 
+   * @return codigo de la escuela 
+   */
   public String getCodigo() {
     return codigo;
   }
 
-  
+  /**
+   * 
+   * @param pCodigo codigo de la escuela
+   */
   public void setCodigo(String pCodigo) {
     this.codigo = pCodigo;
   }
 
-  
+  /**
+   * 
+   * @return  planes de estudios
+   */
   public ArrayList<PlanDeEstudio> getPlanesEstudio() {
     return planesEstudio;
   }
 
   
+  /**
+   * 
+   * @param pPlanEstudio asigna planes de estudios
+   */
   public void setPlanesEstudio(ArrayList<PlanDeEstudio> pPlanEstudio) {
     this.planesEstudio = pPlanEstudio;
   }
   
-  
+  /**
+   * 
+   * @param pPlanEstudio asigna plan de estudio
+   */
   public void asignarPlanEstudio(PlanDeEstudio pPlanEstudio){
     planesEstudio.add(pPlanEstudio);
   }
 
-  
+  /**
+   * 
+   * @return Planes de la escuela
+   */
   public ArrayList<PlandeEscuela> getPlanes() {
     return planes;
   }
 
-  
+  /**
+   * 
+   * @param pPlanes asigna Planes de la escuela
+   */
   public void setPlanes(ArrayList<PlandeEscuela> pPlanes) {
     this.planes = pPlanes;
   }

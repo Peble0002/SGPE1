@@ -24,7 +24,9 @@ public class EliminarCursoPlanEstudios extends javax.swing.JFrame {
         cargarComboBoxEscuelas();
     }
     
-    
+    /**
+     * carga el combobox
+     */
     private void cargarComboBoxEscuelas(){
       //ResultSet rs = conexionEscuela.consultarEscuelas();
       ResultSet rs = conexionPlanEscuela.consultarEscuelaPlan();
@@ -143,7 +145,7 @@ public class EliminarCursoPlanEstudios extends javax.swing.JFrame {
 
   /**
    * 
-   * @param evt 
+   * @param evt evento
    */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Principal nPrincipal = new Principal();
@@ -154,7 +156,7 @@ public class EliminarCursoPlanEstudios extends javax.swing.JFrame {
 
     /**
      * 
-     * @param evt 
+     * @param evt evento
      */
     private void tbCodigoCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbCodigoCursoActionPerformed
         // TODO add your handling code here:
@@ -162,7 +164,7 @@ public class EliminarCursoPlanEstudios extends javax.swing.JFrame {
 
     /**
      * 
-     * @param evt 
+     * @param evt evento
      */
   private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     String info = (String) cbEscuelaPropietaria.getSelectedItem();

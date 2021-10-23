@@ -21,22 +21,34 @@ public class Correquisito {
     this.idCursoCorrequisito = pIdCursoCorrequisito;
   }
 
-  
+  /**
+   * 
+   * @return id del curso consultado
+   */
   public String getIdCursoConsultado() {
     return idCursoConsultado;
   }
 
-  
+  /**
+   * 
+   * @param pIdCursoConsultado id del curso consultado
+   */
   public void setIdCursoConsultado(String pIdCursoConsultado) {
     this.idCursoConsultado = pIdCursoConsultado;
   }
 
-  
+  /**
+   * 
+   * @return id del curso correquisito
+   */
   public String getIdCursoRequisito() {
     return idCursoCorrequisito;
   }
 
-  
+  /**
+   * 
+   * @param pIdCursoCorrequisito id del curso correquisito
+   */
   public void setIdCursoRequisito(String pIdCursoCorrequisito) {
     this.idCursoCorrequisito = pIdCursoCorrequisito;
   }

@@ -184,7 +184,7 @@ public class RegistroCoYRequisitos extends javax.swing.JFrame {
 
     /**
      * 
-     * @param evt 
+     * @param evt evento
      */
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
       Principal nPrincipal = new Principal();
@@ -193,6 +193,10 @@ public class RegistroCoYRequisitos extends javax.swing.JFrame {
       this.dispose();
     }//GEN-LAST:event_btnCerrarActionPerformed
 
+    /**
+     * 
+     * @param evt evento
+     */
     private void btnRegistrarRequisitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarRequisitoActionPerformed
       Curso cursoPadre = new Curso(tbCursoPadre.getText());
       Curso cursoRequisito = new Curso(tbCursoRequisito.getText());
@@ -214,6 +218,10 @@ public class RegistroCoYRequisitos extends javax.swing.JFrame {
       }
     }//GEN-LAST:event_btnRegistrarRequisitoActionPerformed
 
+    /**
+     * 
+     * @param evt evento
+     */
     private void btnRegistrarCorrequisitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarCorrequisitoActionPerformed
       Curso cursoPadre = new Curso(tbCursoPadre.getText());
       Curso cursoCorrequisito = new Curso(tbCursoCorrequisito.getText());

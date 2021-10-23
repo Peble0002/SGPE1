@@ -180,7 +180,7 @@ public class ConsultarCursoPlanEstudio extends javax.swing.JFrame {
 
   /**
    * 
-   * @param evt 
+   * @param evt evento
    */
     private void tbCodigoCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbCodigoCursoActionPerformed
         // TODO add your handling code here:
@@ -188,7 +188,7 @@ public class ConsultarCursoPlanEstudio extends javax.swing.JFrame {
 
     /**
      * 
-     * @param evt 
+     * @param evt evento
      */
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         Principal nPrincipal = new Principal();
@@ -199,7 +199,7 @@ public class ConsultarCursoPlanEstudio extends javax.swing.JFrame {
 
     /**
      * 
-     * @param evt 
+     * @param evt evento
      */
   private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
     Curso curso = new Curso(tbCodigoCurso.getText());

@@ -179,7 +179,7 @@ public class RegistroCursos extends javax.swing.JFrame {
 
   /**
    * 
-   * @param evt 
+   * @param evt evento
    */
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
       Principal nPrincipal = new Principal();
@@ -190,7 +190,7 @@ public class RegistroCursos extends javax.swing.JFrame {
 
     /**
      * 
-     * @param evt 
+     * @param evt evento
      */
   private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
     String nombre = tbNombreCurso.getText();
@@ -207,19 +207,21 @@ public class RegistroCursos extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_btnRegistrarActionPerformed
 
-  
-    private void cargarComboBox(){
-      ResultSet rs = conexionEscuela.consultarEscuelas();
+  /**
+   * Carga el combobox
+   */
+  private void cargarComboBox(){
+    ResultSet rs = conexionEscuela.consultarEscuelas();
       
-      try{
-        while(rs.next()){
-          cbEscuelaPropietaria.addItem(rs.getString("IDEscuela") + " - " + 
-                  rs.getString("Nombre"));
-        }
-      }catch(SQLException e){
-        JOptionPane.showMessageDialog(null, e.toString());
+    try{
+      while(rs.next()){
+        cbEscuelaPropietaria.addItem(rs.getString("IDEscuela") + " - " + 
+                 rs.getString("Nombre"));
       }
+    }catch(SQLException e){
+      JOptionPane.showMessageDialog(null, e.toString());
     }
+  }
     
     /**
      * @param args the command line arguments
