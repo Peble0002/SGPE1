@@ -273,6 +273,10 @@ SELECT * FROM PlanEstudio_Curso
 SELECT * FROM Curso
 SELECT * FROM Correquisitos_Curso
 SELECT * FROM Requisitos_Curso
+SELECT * FROM PlanEstudio
+SELECT * FROM Escuela_PlanEstudio
+
+DELETE FROM PlanEstudio WHERE NumeroPlan = '2052'
 
 EXECUTE Insertar_Escuela 'IC', 'Ingeniería en Computadores'
 DELETE FROM EscuelaOArea WHERE EscuelaOArea.IDEscuela = 'IC';
