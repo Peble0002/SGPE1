@@ -353,14 +353,23 @@ public class RegistroCursoPlanEstudio extends javax.swing.JFrame {
    * @param evt 
    */
     private void btnRegistrarPlanEstudios1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarPlanEstudios1ActionPerformed
-     
       String codigoCurso = tbCodigoCursoPartePlan1.getText();
       String info = (String) cbEscuelaPropietaria1.getSelectedItem();
       String numPlan = info.substring(info.indexOf(":")+2, info.length());
       String numBloqueS = (String) tbBloques.getSelectedItem();
       int numBloque = Integer.parseInt(numBloqueS);
-      Bloque cursoPlan = new Bloque(codigoCurso, numPlan,numBloque);
-      conexion.insertarCursoPlanEstudio(cursoPlan);
+      Bloque cursoPlan = new Bloque(codigoCurso, numPlan, numBloque);
+      
+      if(!conexion.existeCurso(cursoPlan)){
+        JOptionPane.showMessageDialog(null, "El curso ingresado no existe.");
+      }else{
+        if(conexion.existeCursoEnPlan(cursoPlan)){
+          JOptionPane.showMessageDialog(null, "El curso ingresado ya ha sido " 
+                  + "anteriormente agregado a este plan de estudios.");
+        }else{
+          conexion.insertarCursoPlanEstudio(cursoPlan);
+        }
+      }
     }//GEN-LAST:event_btnRegistrarPlanEstudios1ActionPerformed
 
     /**

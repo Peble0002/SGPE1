@@ -77,4 +77,46 @@ public class CursoPlanEstudioBD {
       return null;
     }
   }
+  
+  /**
+   * Método para verificar si existe un curso en la base de datos
+   * @param pBloque de tipo curso
+   * @return un boolean, retorna false si no existe
+   */
+  public boolean existeCurso(Bloque pBloque){
+    ResultSet rs;
+    try{
+      Connection con = conexion.getConexion();
+      PreparedStatement ps = con.prepareStatement("SELECT * FROM Curso WHERE "
+              + "Curso.IDCurso = '" + pBloque.getIdCurso() + "'");
+      rs = ps.executeQuery();
+      JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
+      return rs.next();
+    }catch(SQLException e){
+      JOptionPane.showMessageDialog(null, e.toString());
+      return false;
+    }
+  }
+  
+  /**
+   * Método para verificar si existe un curso en la base de datos
+   * @param pBloque de tipo curso
+   * @return un boolean, retorna false si no existe
+   */
+  public boolean existeCursoEnPlan(Bloque pBloque){
+    ResultSet rs;
+    try{
+      Connection con = conexion.getConexion();
+      PreparedStatement ps = con.prepareStatement("SELECT * FROM PlanEstudio_" 
+              + "Curso WHERE PlanEstudio_Curso.IDCurso = '" + pBloque.getIdCurso() 
+              + "' AND PlanEstudio_Curso.NumeroPlan = '" + pBloque.getNumPlan() 
+              + "'");
+      rs = ps.executeQuery();
+      JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
+      return rs.next();
+    }catch(SQLException e){
+      JOptionPane.showMessageDialog(null, e.toString());
+      return false;
+    }
+  }
 }
