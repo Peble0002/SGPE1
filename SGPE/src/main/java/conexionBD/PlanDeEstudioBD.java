@@ -34,9 +34,8 @@ public class PlanDeEstudioBD {
               + " Horas_Lectivas, Creditos FROM Curso, PlanEstudio_Curso "
               + "WHERE PlanEstudio_Curso.NumeroPlan = " + pCodigo 
               + " AND Curso.IDCurso = PlanEstudio_Curso.IDCurso ORDER "
-                      + "BY(NumeroBloque)");
+              + "BY(NumeroBloque)");
       rs = ps.executeQuery();
-      JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
       return rs;
     }catch(SQLException e){
       JOptionPane.showMessageDialog(null, e.toString());
@@ -59,11 +58,7 @@ public class PlanDeEstudioBD {
       rs = ps.executeQuery();
       rs.next();
       Date vigencia = rs.getDate(1);
-      String fecha = vigencia.toString();
-      
-//      Date fecha = rs.getDate("FechaEntradaVigencia"); //Siempre devolverá un valor al haber sido comprobado que existía.
-//      LocalDate vigencia = fecha.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-      System.out.print(fecha);
+      String fecha = vigencia.toString();      
       return fecha;
     }catch(SQLException e){
       System.out.print(e.toString());
@@ -115,7 +110,6 @@ public class PlanDeEstudioBD {
               + "WHERE PlanEstudio.NumeroPlan = '" + pPlanEstudio.getNumPlan()
               + "'");
       rs = ps.executeQuery();
-      JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
       return rs.next();
     }catch(SQLException e){
       JOptionPane.showMessageDialog(null, e.toString());

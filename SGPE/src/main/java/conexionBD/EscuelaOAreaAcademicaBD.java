@@ -51,7 +51,6 @@ public class EscuelaOAreaAcademicaBD {
       Connection con = conexion.getConexion();
       ps = con.prepareStatement("SELECT * FROM EscuelaOArea");
       rs = ps.executeQuery();
-      JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
       return rs;
     }catch(SQLException e){
       JOptionPane.showMessageDialog(null, e.toString());
@@ -73,8 +72,7 @@ public class EscuelaOAreaAcademicaBD {
       ps = con.prepareStatement("SELECT IDEscuela FROM EscuelaOArea "
               + "WHERE Nombre = " + pNombreEscuela);
       rs = ps.executeQuery();
-      JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
-      return rs.getString(1); //Siempre devolverá un valor al haber sido comprobado que existía.
+      return rs.getString(1);
     }catch(SQLException e){
       JOptionPane.showMessageDialog(null, e.toString());
       return null;
@@ -94,7 +92,6 @@ public class EscuelaOAreaAcademicaBD {
       ps = con.prepareStatement("SELECT * FROM EscuelaOArea WHERE IDEscuela = '"
               + pEscuela.getCodigo() + "'");
       rs = ps.executeQuery();
-      JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
       return rs.next();
     }catch(SQLException e){
       JOptionPane.showMessageDialog(null, e.toString());

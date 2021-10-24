@@ -31,7 +31,6 @@ public class Conexion {
     
     try{
       conectar = DriverManager.getConnection(conexionUrl, usuario, contrasena);
-      JOptionPane.showMessageDialog(null, "Se conectó exitosamente a la base de datos.");
       return conectar;
     }catch(SQLException e){
       System.out.println("Error detectado.");

@@ -70,7 +70,6 @@ public class CursoPlanEstudioBD {
               + "Escuela_PlanEstudio.NumeroPlan AND Escuela_PlanEstudio.IDEscuela "
               + "= EscuelaOArea.IDEscuela;");
       rs = ps.executeQuery();
-      JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
       return rs;
     }catch(SQLException e){
       JOptionPane.showMessageDialog(null, e.toString());
@@ -90,7 +89,6 @@ public class CursoPlanEstudioBD {
       PreparedStatement ps = con.prepareStatement("SELECT * FROM Curso WHERE "
               + "Curso.IDCurso = '" + pBloque.getIdCurso() + "'");
       rs = ps.executeQuery();
-      JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
       return rs.next();
     }catch(SQLException e){
       JOptionPane.showMessageDialog(null, e.toString());
@@ -99,7 +97,8 @@ public class CursoPlanEstudioBD {
   }
   
   /**
-   * Método para verificar si existe un curso en la base de datos
+   * Método para verificar si existe un curso dentro de un plan en la 
+   * base de datos
    * @param pBloque de tipo curso
    * @return un boolean, retorna false si no existe
    */
@@ -112,7 +111,6 @@ public class CursoPlanEstudioBD {
               + "' AND PlanEstudio_Curso.NumeroPlan = '" + pBloque.getNumPlan() 
               + "'");
       rs = ps.executeQuery();
-      JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
       return rs.next();
     }catch(SQLException e){
       JOptionPane.showMessageDialog(null, e.toString());

@@ -27,7 +27,6 @@ public class CursoRequisitosBD {
       Connection con = conexion.getConexion();
       ps = con.prepareStatement("SELECT Requisitos_Curso.IDCursoRequisito, Curso.Nombre FROM Requisitos_Curso, Curso WHERE Requisitos_Curso.IDCursoConsultado = '" + pCurso.getIdCursos() + "' AND Requisitos_Curso.IDCursoRequisito = Curso.IDCurso");
       rs = ps.executeQuery();
-      JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
       return rs;
     }catch(SQLException e){
       JOptionPane.showMessageDialog(null, e.toString());
@@ -52,7 +51,6 @@ public class CursoRequisitosBD {
               + pCursoConsulta.getIdCursos() + "' AND Requisitos_Curso.IDCursoRequisito "
                       + "= '" + pCursoRequisito.getIdCursos() + "'");
       rs = ps.executeQuery();
-      JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
       return rs.next();
     }catch(SQLException e){
       JOptionPane.showMessageDialog(null, e.toString());

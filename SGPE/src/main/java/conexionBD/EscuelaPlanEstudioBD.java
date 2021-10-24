@@ -33,7 +33,6 @@ public class EscuelaPlanEstudioBD {
               + "Escuela_PlanEstudio WHERE EscuelaOArea.Nombre = '" 
               + pEscuela + "' AND Escuela_PlanEstudio.NumeroPlan = " + pCodigo);
       rs = ps.executeQuery();
-      JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
       return rs.getRow() == 0;
     }catch(SQLException e){
       JOptionPane.showMessageDialog(null, e.toString());
@@ -55,7 +54,6 @@ public class EscuelaPlanEstudioBD {
               + " Escuela_PlanEstudio WHERE EscuelaOArea.IDEscuela = "
               + "Escuela_PlanEstudio.IDEscuela");
       rs = ps.executeQuery();
-      JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
       return rs;
     }catch(SQLException e){
       JOptionPane.showMessageDialog(null, e.toString());

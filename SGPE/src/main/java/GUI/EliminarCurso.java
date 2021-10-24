@@ -125,7 +125,7 @@ public class EliminarCurso extends javax.swing.JFrame {
     }else{
       if(conexion.existeCursoEnPlan(cursoEliminar)){
         JOptionPane.showMessageDialog(null, "El curso no se puede eliminar, " +
-                "ya que el curso está en un plan de estudios.");
+                "ya que está en un plan de estudios actualmente.");
       }else{
         conexion.eliminarCurso(cursoEliminar);
       }

@@ -31,7 +31,6 @@ public class CursoCorrequisitosBD {
               + pCurso.getIdCursos() 
               + "' AND Correquisitos_Curso.IDCursoCorrequisito = Curso.IDCurso");
       rs = ps.executeQuery();
-      JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
       return rs;
     }catch(SQLException e){
       JOptionPane.showMessageDialog(null, e.toString());
@@ -56,7 +55,6 @@ public class CursoCorrequisitosBD {
               + pCursoConsulta.getIdCursos() + "' AND Correquisitos_Curso.IDCursoCorrequisito = '" 
               + pCursoRequisito.getIdCursos() + "'");
       rs = ps.executeQuery();
-      JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
       return rs.next();
     }catch(SQLException e){
       JOptionPane.showMessageDialog(null, e.toString());
@@ -120,7 +118,6 @@ public class CursoCorrequisitosBD {
               + pCursoConsulta.getIdCursos() + "' AND Correquisitos_Curso."
               + "IDCursoCorrequisito = '"+pCursoCorrequisito.getIdCursos()+"'");
       rs = ps.executeQuery();
-      JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
       return rs.next();
     }catch(SQLException e){
       JOptionPane.showMessageDialog(null, e.toString());

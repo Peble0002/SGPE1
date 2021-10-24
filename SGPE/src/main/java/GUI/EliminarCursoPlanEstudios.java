@@ -172,8 +172,21 @@ public class EliminarCursoPlanEstudios extends javax.swing.JFrame {
     String codigo = info.substring(info.indexOf(":")+2, info.length());
     
     Bloque bloque = new Bloque(curso, codigo);
+    if(!conexionCursoPlan.existeCurso(bloque)){
+      JOptionPane.showMessageDialog(null, "No existe el curso con código " 
+              + bloque.getIdCurso() + " dentro de la base de datos.");
+    }else{
+      if(!conexionCursoPlan.existeCursoEnPlan(bloque)){
+        JOptionPane.showMessageDialog(null, "No existe una relación entre el " 
+                + "curso " + bloque.getIdCurso() + " y el plan de estudios " 
+                + bloque.getNumPlan() + " en la base de datos.");
+      }else{
+        conexionCursoPlan.eliminarCursoPlan(bloque);
+        JOptionPane.showMessageDialog(null,"¡Eliminación realizada con éxito!");
+      }
+    }
     
-    conexionCursoPlan.eliminarCursoPlan(bloque);
+    
   }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

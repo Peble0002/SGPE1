@@ -29,7 +29,7 @@ public class CursoBD {
       ps.setInt(3, pCurso.getCreditos());
       ps.setInt(4, pCurso.getHorasLectivas());
       ps.executeUpdate();
-      JOptionPane.showMessageDialog(null, "Registro guardado.");
+      JOptionPane.showMessageDialog(null, "Registro completado.");
     }catch(SQLException e){
       JOptionPane.showMessageDialog(null, e.toString());
     }
@@ -47,7 +47,6 @@ public class CursoBD {
       PreparedStatement ps = con.prepareStatement("SELECT * FROM Curso WHERE "
               + "Curso.IDCurso = '" + pCurso.getIdCursos() + "'");
       rs = ps.executeQuery();
-      JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
       return rs.next();
     }catch(SQLException e){
       JOptionPane.showMessageDialog(null, e.toString());
@@ -68,7 +67,6 @@ public class CursoBD {
               "Curso WHERE PlanEstudio_Curso.IDCurso = '" + pCurso.getIdCursos()
               + "'");
       rs = ps.executeQuery();
-      JOptionPane.showMessageDialog(null, "Consulta realizada exitosamente.");
       return rs.next();
     }catch(SQLException e){
       JOptionPane.showMessageDialog(null, e.toString());
