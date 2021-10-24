@@ -17,5 +17,11 @@
             <artifactId>mssql-jdbc</artifactId>
             <version>9.4.0.jre8</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.itextpdf/itextpdf -->
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itextpdf</artifactId>
+            <version>5.5.12</version>
+        </dependency>
     </dependencies>
 </project>
