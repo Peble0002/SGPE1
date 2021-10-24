@@ -275,6 +275,9 @@ SELECT * FROM Correquisitos_Curso
 SELECT * FROM Requisitos_Curso
 SELECT * FROM PlanEstudio
 SELECT * FROM Escuela_PlanEstudio
+SELECT * FROM EscuelaOArea
+
+DELETE FROM EscuelaOArea WHERE EscuelaOArea.IDEscuela = 'CI'
 
 DELETE FROM PlanEstudio WHERE NumeroPlan = '2052'
 
@@ -290,3 +293,10 @@ SELECT Curso.IDCurso, Nombre, NumeroBloque, Horas_Lectivas, Creditos FROM Curso,
 SELECT EscuelaOArea.IDEscuela, EscuelaOArea.Nombre, PlanEstudio_Curso.NumeroPlan FROM EscuelaOArea, Escuela_PlanEstudio, PlanEstudio_Curso WHERE PlanEstudio_Curso.IDCurso = 'TI1401' AND PlanEstudio_Curso.NumeroPlan = Escuela_PlanEstudio.NumeroPlan AND Escuela_PlanEstudio.IDEscuela = EscuelaOArea.IDEscuela;
 
 SELECT Requisitos_Curso.IDCursoRequisito, Curso.Nombre FROM Requisitos_Curso, Curso WHERE Requisitos_Curso.IDCursoConsultado = 'TI2402' AND Requisitos_Curso.IDCursoConsultado = Curso.IDCurso
+
+INSERT INTO PlanEstudio (NumeroPlan, FechaEntradaVigencia) VALUES ('411','2018/01/01')
+INSERT INTO Escuela_PlanEstudio (IDEscuela, NumeroPlan) VALUES ('IC','411')
+
+SELECT * FROM PlanEstudio WHERE NumeroPlan = '411'
+SELECT * FROM PlanEstudio WHERE NumeroPlan = '411'
+SELECT FechaEntradaVigencia FROM PlanEstudio WHERE NumeroPlan = '411'

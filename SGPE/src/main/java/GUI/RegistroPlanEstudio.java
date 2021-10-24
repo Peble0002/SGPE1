@@ -211,7 +211,7 @@ public class RegistroPlanEstudio extends javax.swing.JFrame {
    */
   private boolean validarFecha(int ano, int mes, int dia) throws java.time.DateTimeException{
     try{
-      LocalDate.of(ano, mes, dia);
+      LocalDate fecha = LocalDate.of(ano, mes, dia);
       return true;
     }catch(java.time.DateTimeException e){
       return false;
@@ -234,11 +234,11 @@ public class RegistroPlanEstudio extends javax.swing.JFrame {
     int mes = Integer.parseInt((me));
     String dia = info.substring(info.indexOf("/")+4, info.length());
     int dias = Integer.parseInt((dia));
-    if(validarFecha(anos, mes, dias)){
-      JOptionPane.showMessageDialog(null, "La fecha ingresada no es válida. "
-              + "Po favor vuelva a intentar ingresa la fecha.");
-      return;
-    }
+//    if(validarFecha(anos, mes, dias)){
+//      JOptionPane.showMessageDialog(null, "La fecha ingresada no es válida. "
+//              + "Po favor vuelva a intentar ingresa la fecha.");
+//      return;
+//    }
     LocalDate fechaEntradaVigencia = LocalDate.of(anos, mes, dias);
     PlanDeEstudio plan = new PlanDeEstudio(escuela,numPlan,fechaEntradaVigencia);
     PlandeEscuela planEscuela = new PlandeEscuela(codigoEscuela, numPlan);

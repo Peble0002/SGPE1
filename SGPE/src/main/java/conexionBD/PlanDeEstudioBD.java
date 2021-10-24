@@ -52,19 +52,21 @@ public class PlanDeEstudioBD {
   public String obtenerFechaVigencia(String pCodigoPlan){
     PreparedStatement ps;
     ResultSet rs;
-    
+ 
     try{
       Connection con = conexion.getConexion();
-      ps = con.prepareStatement ("SELECT * FROM PlanEstudio WHERE NumeroPlan = ?");
-      ps.setString(1, pCodigoPlan);
+      ps = con.prepareStatement("SELECT FechaEntradaVigencia FROM PlanEstudio WHERE NumeroPlan = '"+pCodigoPlan+"'");
       rs = ps.executeQuery();
-      String vigencia = rs.getString("FechaEntradaVigencia");
+      rs.next();
+      Date vigencia = rs.getDate(1);
+      String fecha = vigencia.toString();
       
 //      Date fecha = rs.getDate("FechaEntradaVigencia"); //Siempre devolverá un valor al haber sido comprobado que existía.
 //      LocalDate vigencia = fecha.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-      return vigencia;
+      System.out.print(fecha);
+      return fecha;
     }catch(SQLException e){
-      System.out.print("ss");
+      System.out.print(e.toString());
       return null;
     }
   }
